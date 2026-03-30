@@ -1,0 +1,530 @@
+{
+  "header": {
+    "navHome": "Inicio",
+    "navSectors": "Sectores",
+    "navEcosystem": "Ecosistema",
+    "navProcess": "Proceso",
+    "navContact": "Contacto",
+    "navBrands": "Marcas",
+    "navEshop": "E-Shop",
+    "portal": "Portal Cliente",
+    "langEs": "ES",
+    "langEn": "EN",
+    "navLabel": "Principal",
+    "navSolutions": "Soluciones",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "menuNavAria": "Navegación móvil"
+  },
+  "solutionsMenu": {
+    "panelAria": "Catálogo de soluciones NUO",
+    "backdropAria": "Cerrar menú de soluciones",
+    "disclaimer": "Estructura de catálogo inspirada en portales típicos de conectividad empresarial. Los enlaces dirigen a secciones de esta landing; el alcance comercial se define en proyecto.",
+    "columns": [
+      {
+        "id": "bySector",
+        "title": "Soluciones por sector",
+        "items": [
+          { "label": "Financiero", "icon": "Coins", "hash": "sectors" },
+          { "label": "Industrial", "icon": "Rocket", "hash": "sectors" },
+          { "label": "Servicios", "icon": "Monitor", "hash": "sectors" },
+          { "label": "Retail", "icon": "FileText", "hash": "sectors" }
+        ]
+      },
+      {
+        "id": "carrier",
+        "title": "Carrier",
+        "items": [
+          { "label": "Mayoreo", "hash": "nuo-ecosystem" },
+          { "label": "Servicios a medida", "hash": "nuo-ecosystem" }
+        ]
+      },
+      {
+        "id": "enterprise",
+        "title": "Conectividad empresarial",
+        "items": [
+          { "label": "Internet dedicado", "hash": "nuo-ecosystem" },
+          { "label": "Red privada", "hash": "nuo-ecosystem" },
+          { "label": "WAN empresarial", "hash": "highlights" },
+          { "label": "SD-WAN gestionado", "hash": "highlights" },
+          { "label": "Voz empresarial", "hash": "contact" }
+        ]
+      },
+      {
+        "id": "cloud",
+        "title": "Nube",
+        "items": [
+          { "label": "Cloud Connect", "hash": "nuo-ecosystem" },
+          { "label": "Multicloud Connect", "hash": "nuo-ecosystem" },
+          { "label": "Secure Cloud Connect", "hash": "highlights" }
+        ]
+      },
+      {
+        "id": "security",
+        "title": "Seguridad y cifrado",
+        "items": [
+          { "label": "Cifrado de red", "hash": "highlights" },
+          { "label": "Seguridad de perímetro", "hash": "highlights" },
+          { "label": "SD-WAN Advanced Security", "hash": "highlights" },
+          { "label": "Clean Pipes", "hash": "highlights" }
+        ]
+      }
+    ]
+  },
+  "hero": {
+    "badge": "SISTEMAS OPERATIVOS - PROTECCION ACTIVA",
+    "titleLine1": "Infraestructura Critica",
+    "titleHighlight": "Protegida",
+    "titleMid": " y Conectividad de ",
+    "titleEnd": "Vanguardia",
+    "subtitle": "Disenamos redes industriales con ADN de Ciberseguridad. Cada solucion nace protegida desde su arquitectura.",
+    "subtitleBold": "ADN de Ciberseguridad",
+    "chip1": "Integracion con fabricantes lideres de videovigilancia",
+    "chip2": "Zero Trust ready",
+    "chip3": "Labs Next.js + TypeScript",
+    "chipsAria": "Credenciales y enfoque",
+    "ctaExplore": "Explorar Soluciones",
+    "ctaAudit": "Auditoria de Red",
+    "stat1": "Uptime garantizado",
+    "stat2": "Monitoreo activo",
+    "stat3": "Tolerancia a brechas",
+    "aria": "Hero principal"
+  },
+  "heroThreatMap": {
+    "aria": "Panel demostrativo de correlacion de amenazas simuladas",
+    "badge": "NUO-SOC · SIM",
+    "live": "EN VIVO",
+    "localTime": "Hora local",
+    "feedTitle": "Correlacion en tiempo simulado",
+    "counterLabel": "Señales correlacionadas (24h) · SIM",
+    "sectorTitle": "Top sectores (simulación)",
+    "topCountriesTitle": "Origen top (simulación)",
+    "rotatingStatsTitle": "Telemetria agregada · SIM",
+    "legendTitle": "Leyenda",
+    "legend": [
+      { "tone": "green", "label": "Vectores / flujos" },
+      { "tone": "red", "label": "Alertas críticas" },
+      { "tone": "cyan", "label": "Nodos / presencia" }
+    ],
+    "topCountries": [
+      { "label": "China", "share": 28 },
+      { "label": "Estados Unidos", "share": 19 },
+      { "label": "Rusia", "share": 14 },
+      { "label": "Brasil", "share": 9 },
+      { "label": "India", "share": 8 }
+    ],
+    "rotatingStats": [
+      { "value": "12.4k", "label": "IOC correlacionados (ventana)" },
+      { "value": "847", "label": "Reglas Sigma en uso" },
+      { "value": "2.1M", "label": "Eventos normalizados / 24h" },
+      { "value": "99.2%", "label": "Cobertura de segmentos OT" },
+      { "value": "156", "label": "Playbooks de respuesta" }
+    ],
+    "disclaimer": "Visualizacion demostrativa. Sin datos reales de clientes ni de terceros. Estetica tipo mapa SOC de referencia; solo demostracion NUO.",
+    "feed": [
+      "[ALERTA] Movimiento lateral · MX → US · segmento OT",
+      "[IOC] Beacon DNS tunelado · CN → JP",
+      "[SIGMA] Brute RDP · RU → DE · contencion activa",
+      "[ALERTA] Exfiltracion staging · IN → SG",
+      "[THREAT] C2 resilient · BR → UK",
+      "[NUO] Politica Zero Trust · bloqueo en borde",
+      "[ALERTA] Modbus anomalo · DE → US · planta remota",
+      "[IOC] Kerberoasting · FR → US"
+    ],
+    "sectors": [
+      { "label": "Manufactura", "pct": 94 },
+      { "label": "Energia", "pct": 88 },
+      { "label": "Financiero", "pct": 79 },
+      { "label": "Retail", "pct": 71 },
+      { "label": "Logistica", "pct": 63 }
+    ]
+  },
+  "threatMapCompare": {
+    "kicker": "Referencia visual",
+    "title": "Mapa de amenazas: estilo competidor vs. NUO",
+    "subtitle": "Comparación lado a lado entre un panel inspirado en mapas públicos típicos de competidores (arcos cálidos, tabla IPS, top exploits) y el mapa demostrativo NUO (cian, telemetría OT y leyenda tipo SOC). Ambos usan datos simulados.",
+    "sectionDisclaimer": "El panel izquierdo imita la estética de productos de terceros solo con fines comparativos en esta demostración; no implica afiliación, respaldo ni datos reales de ningún fabricante.",
+    "competitorStyle": {
+      "cardLabel": "Referencia · mapa estilo mercado (simulado)",
+      "aria": "Panel demostrativo estilo mapa de amenazas al uso en el mercado, datos simulados",
+      "badge": "OUTBREAK / IPS · SIM",
+      "feedTitle": "Eventos IPS en ventana simulada",
+      "time24h": "24 h",
+      "time7d": "7 d",
+      "view2d": "2D",
+      "view3d": "3D",
+      "live": "LIVE",
+      "legendTitle": "Leyenda",
+      "legend": [
+        { "tone": "red", "label": "Vectores de ataque / IPS" },
+        { "tone": "orange", "label": "Orígenes calientes" }
+      ],
+      "feed": [
+        "[IPS] Exploit conocido · RU → DE · puerto 443",
+        "[OUTBREAK] Campaña ransomware · CN → US",
+        "[IPS] SQLi en app expuesta · BR → UK",
+        "[IPS] Brute force SSH · IN → SG",
+        "[OUTBREAK] Botnet IoT · varios → MX",
+        "[IPS] CVE crítico · escaneo masivo",
+        "[IPS] DNS tunneling · JP → AU"
+      ],
+      "topThreatsTitle": "Top amenazas (simulado)",
+      "topThreats": [
+        { "name": "Librería de logging · RCE (variante)", "count": "18.2k" },
+        { "name": "Correo empresarial · SSRF", "count": "14.1k" },
+        { "name": "NGFW · path traversal (CVE ref.)", "count": "9.8k" },
+        { "name": "OpenSSL buffer (hist.)", "count": "7.4k" },
+        { "name": "RDP brute force", "count": "62.0k" }
+      ],
+      "tableTitle": "Eventos recientes IPS (simulado)",
+      "columns": {
+        "threat": "Amenaza",
+        "src": "Origen",
+        "dst": "Destino",
+        "sev": "Severidad"
+      },
+      "tableRows": [
+        {
+          "threat": "ET EXPLOIT Possible CVE-2023-XXXX",
+          "src": "Shenzhen",
+          "dst": "Dallas",
+          "severityLabel": "Crítica",
+          "severityKey": "critical"
+        },
+        {
+          "threat": "MALWARE_CnC Beacon HTTPS",
+          "src": "Moscú",
+          "dst": "Frankfurt",
+          "severityLabel": "Crítica",
+          "severityKey": "critical"
+        },
+        {
+          "threat": "SCAN Suspicious TCP 445",
+          "src": "São Paulo",
+          "dst": "Londres",
+          "severityLabel": "Alta",
+          "severityKey": "high"
+        },
+        {
+          "threat": "IPS SQL Injection attempt",
+          "src": "Ciudad de México",
+          "dst": "Chicago",
+          "severityLabel": "Alta",
+          "severityKey": "high"
+        }
+      ],
+      "counterLabel": "Eventos IPS agregados (ventana) · SIM",
+      "ipsLabel": "Firmas IPS activas (simulado)",
+      "ipsValue": "48.2k",
+      "disclaimer": "Solo demostración. Sin telemetría real. Los nombres de amenazas son genéricos o de referencia pública; no constituyen aviso de incidente."
+    },
+    "nuo": {
+      "cardLabel": "NUO Networks · mapa demostrativo (SOC/OT)"
+    }
+  },
+  "socialRibbon": {
+    "line": "Infraestructura critica en operacion",
+    "aria": "Indicadores de confianza",
+    "stats": [
+      { "value": "500+", "label": "Activos bajo arquitectura segura" },
+      { "value": "24/7", "label": "Monitoreo y respuesta" },
+      { "value": "MX · US", "label": "Operacion binacional" }
+    ]
+  },
+  "partners": {
+    "aria": "Aliados tecnológicos y fabricantes",
+    "kicker": "Ecosistema de fabricantes y plataformas",
+    "note": "Referencias de marcas según el catálogo público EPCOM (epcom.net/principal/brands). Los logos se resuelven vía servicios de terceros (p. ej. Clearbit / favicon) y pueden variar o mostrarse como texto si no hay imagen; no sustituyen logotipos oficiales aprobados. NUO no implica afiliación ni respaldo de cada fabricante.",
+    "sourceLabel": "Fuente catálogo EPCOM",
+    "pageLink": "Página de marcas NUO",
+    "brands": [
+      { "id": "epcom-professional", "label": "EPCOM Professional" },
+      { "id": "hikvision", "label": "Hikvision" },
+      { "id": "grandstream", "label": "Grandstream" },
+      { "id": "zkteco", "label": "ZKTeco" },
+      { "id": "idis", "label": "IDIS" },
+      { "id": "mimosa", "label": "Mimosa Networks" },
+      { "id": "western-digital", "label": "Western Digital" },
+      { "id": "commscope", "label": "CommScope" },
+      { "id": "honeywell", "label": "Honeywell" },
+      { "id": "tp-link", "label": "TP-Link" },
+      { "id": "akuvox", "label": "Akuvox" },
+      { "id": "sycom", "label": "Sycom" },
+      { "id": "txpro", "label": "TXPRO" },
+      { "id": "icom", "label": "ICOM" },
+      { "id": "witek", "label": "Wi-Tek" },
+      { "id": "alta-labs", "label": "Alta Labs" }
+    ]
+  },
+  "brandsPage": {
+    "metaTitle": "Marcas y fabricantes | NUO Networks",
+    "metaKeywords": [
+      "marcas de seguridad",
+      "fabricantes CCTV",
+      "EPCOM",
+      "videovigilancia",
+      "control de acceso",
+      "redes industriales",
+      "integración OT/IT",
+      "distribuidor tecnología seguridad",
+      "NUO Networks",
+      "catálogo de marcas",
+      "Hikvision",
+      "integradores México"
+    ],
+    "metaDescription": "Ecosistema de fabricantes con los que NUO integra proyectos; referencia al catálogo público de marcas EPCOM en videovigilancia, acceso, redes y energía.",
+    "kicker": "Catálogo de integración",
+    "title": "Marcas con las que trabajamos",
+    "subtitle": "Selección representativa del ecosistema de fabricantes que sustentan nuestras integraciones OT/IT y cyber-físicas.",
+    "intro": "NUO diseña e implementa soluciones con equipamiento de múltiples fabricantes. La lista siguiente resume marcas frecuentes en nuestro entorno de integración; el inventario completo y actualizado de fabricantes lo publica EPCOM como distribuidor de referencia en la región.",
+    "gridTitle": "Marcas destacadas",
+    "epcomButton": "Catálogo completo de marcas en EPCOM",
+    "epcomUrl": "https://www.epcom.net/principal/brands",
+    "footnote": "Los nombres comerciales pertenecen a sus titulares. Esta página es informativa y no implica patrocinio, joint venture ni relación laboral con cada fabricante. Sustituye los wordmarks por logotipos oficiales cuando tengas autorización de marca.",
+    "backHome": "Volver al inicio"
+  },
+  "eshopPage": {
+    "metaTitle": "E-Shop · equipos y accesorios | NUO Networks",
+    "metaDescription": "E-Shop NUO: CCTV y accesorios (micrófonos, transceptores UTP, domos PTZ, NVR, TurboHD, kits), cableado Cat5e/Cat6/fibra, control de acceso, torniquetes, PoE/UPS, racks, FTTH/PON, VoIP, Wi‑Fi, energía solar, audio PA, flotas y telemática. Venta de equipos para integradores — cotización con NUO Networks.",
+    "kicker": "E-Shop",
+    "title": "Venta de equipos",
+    "subtitle": "Catálogo orientado a integración: ramas de producto para cotización, surtido y proyectos llave en mano.",
+    "intro": "Esta vista resume las ramas de nuestro e-shop. Los nombres siguen la taxonomía típica de distribución profesional (CCTV, acceso, redes, energía, audio/VoIP, especialidades). Precios, existencias y marcas concretas se confirman al cotizar.",
+    "tocLabel": "Ir a la sección",
+    "disclaimer": "El listado es informativo y puede variar según fabricante y región. No garantiza disponibilidad inmediata de cada SKU.",
+    "backHome": "Volver al inicio",
+    "ctaContact": "Cotizar / contacto",
+    "store": {
+      "heroBadge": "Integración NUO × canal EPCOM",
+      "epcomBrands": "Marcas en EPCOM",
+      "epcomDeals": "Super deals EPCOM",
+      "epcomDealsHint": "Promos y saldos publicados en el sitio mayorista.",
+      "statLines": "Líneas de catálogo",
+      "statFamilies": "Familias",
+      "statEpcom": "Stock en EPCOM",
+      "epcomNote": "Los precios, fotos y existencias reales se confirman en epcom.net. NUO canaliza ingeniería, logística y cotización de proyecto.",
+      "searchPlaceholder": "Buscar línea, familia o palabra clave…",
+      "searchAria": "Buscar en el catálogo",
+      "openCart": "Lista de cotización",
+      "filterAll": "Todas las familias",
+      "showingCount": "Mostrando {n} líneas",
+      "resetFilters": "Limpiar filtros",
+      "addToQuote": "Añadir",
+      "openEpcom": "EPCOM",
+      "noResults": "Sin coincidencias. Prueba otra búsqueda o quita filtros.",
+      "seoFoldLabel": "Texto y listas completas para buscadores (SEO)",
+      "cartTitle": "Tu lista NUO",
+      "unitsLabel": "partidas",
+      "drawerClose": "Cerrar lista",
+      "emptyCart": "Aún no hay partidas. Añade líneas desde las tarjetas del catálogo.",
+      "decreaseQty": "Reducir cantidad",
+      "increaseQty": "Aumentar cantidad",
+      "removeLine": "Quitar línea",
+      "copyList": "Copiar",
+      "emailQuote": "Cotizar por correo",
+      "emailTo": "Enviar a",
+      "clearCart": "Vaciar lista",
+      "emailSubject": "Cotización E-Shop NUO (referencia EPCOM)"
+    },
+    "seoSectionHeading": "Catálogo indexable: líneas de producto y términos de búsqueda",
+    "seoSectionBody": "En esta página, NUO Networks publica de forma explícita las ramas de nuestro e-shop orientado a integradores: desde videovigilancia (cámaras IP 4K, bullet, domo, ojo de pez, PTZ, NVR, codificadores, DVR móvil, TurboHD TVI/AHD y kits multicanal) hasta accesorios de campo (montajes, gabinetes, probadores CCTV, extensores HDMI/VGA/DVI, control PTZ, transmisores inalámbricos de video). Incluimos cableado estructurado y conectividad (Cat5e, Cat6, Cat6a, categoría 7A, fibra óptica, coaxial, jumpers, conectores de red, bandejas y canaletas), energía y respaldo (fuentes, baterías, PoE de largo alcance, inyectores y switches PoE, PDU medidos y conmutados, UPS no break, conversores, adaptadores de pared, protección de picos en AC/coaxial/red y CC), servidores y VMS (HDD, NAS/SAN, tarjetas SD, Digifort, EPCOM Cloud), herramientas y probadores de video y tierra. El control de acceso abarca paneles, licencias, cables, grommets, tarjetas y tags, contactos magnéticos, relevadores, controles inalámbricos, biometría, lectores MIFARE/iCLASS/NFC/proximidad/UHF-RFID, teclados autónomos, cerraduras eléctricas y electromagnéticas, barras antipánico, torniquetes y barreras, porteros analógicos e IP, videoporteros multiapartamento y acceso vehicular (barreras, operadores de portón). También energía auxiliar, iluminación LED, tierras y pararrayos, inversores solares on/off grid, kits solares, paneles y bombas sumergibles; RF y radioenlaces (backhaul, PtP/PtMP en 2.4/5 GHz, 60/70/80 GHz, 900 MHz), cobertura celular 5G/4G LTE, FTTH/PON, GPON, OLT/ONT, switches y routers, gabinetes y racks, torres y mástiles; VoIP (teléfonos IP, gateways, headsets, audio/videoconferencia); Wi‑Fi (AP, controladores, repetidores); audio comercial y PA; IoT, GPS y telemática; equipamiento para flotas y emergencia (lightbars, sirenas, altavoces, luces perimetrales, barras de dirección de tráfico); y especiales de inventario y material de mercadotecnia. Todo el listado inferior repite estas palabras clave en texto plano para facilitar la indexación en buscadores.",
+    "departmentLabels": {
+      "surveillanceAccessories": "Videovigilancia · accesorios de campo",
+      "cablesAndConnectors": "Cables y conectores",
+      "videoKitsAndIntercom": "Kits, porteros e intercomunicación",
+      "ipVideoRecording": "Cámaras IP, NVR y codificadores",
+      "mobileVideoRecording": "Grabación móvil y portátil",
+      "powerElectrification": "Energía, PoE, UPS y protección",
+      "serversSoftwareStorage": "Servidores, almacenamiento y VMS",
+      "fieldToolsAndTest": "Herramientas e instrumentos de prueba",
+      "turboHdLine": "TurboHD (TVI) / AHD",
+      "accessControl": "Control de acceso · paneles y periféricos",
+      "locksAndDoorHardware": "Cerraduras y herrajes eléctricos",
+      "readersAndBiometrics": "Lectores, tarjetas y biometría",
+      "pedestrianAndVehicularAccess": "Peatonal, vehicular y torniquetes",
+      "batteriesEnergyLighting": "Baterías, luminarias y tierras",
+      "solarAndPowerElectronics": "Solar e inversores",
+      "pduRacksPowerDistribution": "Racks, gabinetes y PDU",
+      "rfWirelessBackhaul": "RF, antenas y radioenlaces",
+      "cellularFtthNetworking": "Celular, FTTH/PON y switching",
+      "structuredCabling": "Cableado estructurado cobre/fibra",
+      "wifiAndLan": "Wi-Fi y LAN inalámbrica",
+      "voip": "Voz IP (VoIP)",
+      "commercialAudioAv": "Audio comercial, PA y AV",
+      "fleetEmergencySpecialty": "Flotas, emergencia y luces especiales",
+      "iotGpsTelematics": "IoT, GPS y telemática",
+      "specialsMarketing": "Especiales y mercadotecnia"
+    }
+  },
+  "sectors": {
+    "kicker": "Sectores activos",
+    "title": "Donde aplica el ecosistema NUO",
+    "subtitle": "Mismo ritmo que un feed escaneable: desliza y elige el contexto que se parece al tuyo.",
+    "sectorLabel": "Sector"
+  },
+  "sectorCards": [
+    { "id": "mfg", "title": "Manufactura", "subtitle": "OT/IT segmentado · continuidad" },
+    { "id": "log", "title": "Logistica", "subtitle": "Enlaces criticos · trazabilidad" },
+    { "id": "corp", "title": "Corporativo", "subtitle": "SD-WAN · acceso Zero Trust" },
+    { "id": "ret", "title": "Retail", "subtitle": "CCTV IA · pagos seguros" },
+    { "id": "fin", "title": "Servicios", "subtitle": "Datos protegidos · compliance" }
+  ],
+  "ecosystem": {
+    "kicker": "NUO Ecosystem",
+    "title": "Arquitectura de Negocio en 4 Unidades Estrategicas",
+    "subtitle": "Arquitectura tecnica, limpia y futurista que integra seguridad fisica, infraestructura critica, ciberdefensa y desarrollo digital en un solo ecosistema.",
+    "aria": "NUO Ecosystem strategic pillars",
+    "highlightLabel": "Highlight:",
+    "expertBadge": "Expert Badge",
+    "pillars": [
+      {
+        "id": "cyber-physical",
+        "title": "Cyber-Physical Security",
+        "summary": "Proteccion fisica inteligente para activos criticos y perimetros industriales.",
+        "provider": "Fabricantes lideres de videovigilancia y control de acceso",
+        "keywords": ["CCTV IA", "Biometria", "Intrusion Blindada"],
+        "highlight": "Proteccion total de activos fisicos"
+      },
+      {
+        "id": "critical-infrastructure",
+        "title": "Critical Infrastructure",
+        "summary": "Infraestructura y energia resiliente disenada para operaciones de mision critica.",
+        "provider": "Networking + Energia",
+        "keywords": ["Data Centers", "Fibra", "Networking Industrial", "Energia Solar"],
+        "highlight": "Continuidad operativa 24/7"
+      },
+      {
+        "id": "cyber-defense",
+        "title": "Cyber-Defense",
+        "summary": "Arquitectura de blindaje logico con proteccion de perimetro y datos empresariales.",
+        "provider": "Core Strength Unit",
+        "keywords": ["Zero Trust", "SD-WAN", "Pentesting"],
+        "highlight": "Blindaje logico de alta gama",
+        "isCore": true
+      },
+      {
+        "id": "digital-labs",
+        "title": "Digital Labs & SaaS",
+        "summary": "Software que convierte datos de infraestructura en inteligencia accionable.",
+        "provider": "Custom Software Lab",
+        "keywords": ["SaaS a medida", "Web Dev", "Apps moviles", "MarTech"],
+        "highlight": "Transformacion digital y crecimiento"
+      }
+    ]
+  },
+  "nuoVsTraditional": {
+    "kicker": "Posicionamiento disruptivo",
+    "title": "El diferencial NUO (vs. tradicionales)",
+    "subtitle": "Frente a integradores lentos típicos de grandes competidores en el mercado, NUO opera con ritmo de ingeniería: despliegues en semanas, IT/OT en una sola arquitectura y software que nace endurecido.",
+    "aria": "Comparativa Corporativos lentos versus NUO Networks",
+    "metricColumn": "Criterio",
+    "oldColumn": "Corporativos lentos",
+    "nuoColumn": "NUO Networks",
+    "rows": [
+      {
+        "id": "response",
+        "label": "Tiempo de respuesta",
+        "oldWay": "Ciclos de compra y despliegue de meses; mesas eternas y cambios de alcance que se arrastran trimestre tras trimestre.",
+        "nuoWay": "Sprints de ingeniería orientados a activos críticos: del diagnóstico al valor en semanas, con hitos medibles y sin burocracia innecesaria."
+      },
+      {
+        "id": "itot",
+        "label": "Integración IT/OT",
+        "oldWay": "CCTV, red y ciberseguridad repartidos entre silos y proveedores que casi no se hablan: brechas entre lo físico y lo lógico.",
+        "nuoWay": "Una sola arquitectura de confianza: desde cámaras y control de acceso físico hasta firewalls y Zero Trust, correlacionado y gobernado."
+      },
+      {
+        "id": "saas",
+        "label": "Flexibilidad SaaS",
+        "oldWay": "Paquetes rígidos y licencias genéricas que no encajan en planta; poco margen para adaptar flujos industriales reales.",
+        "nuoWay": "SaaS, paneles y APIs a la medida, integrados a tus datos operativos y a políticas de seguridad desde el diseño."
+      },
+      {
+        "id": "engineering",
+        "label": "Soporte de ingeniería directa",
+        "oldWay": "Escalamientos por capas comerciales antes de llegar a quien realmente resuelve; tiempos muertos y responsabilidades difusas.",
+        "nuoWay": "Hablas con quien diseñó e implementó la solución: ingeniería de borde a borde—diagnóstico, despliegue y operación sin intermediarios de más."
+      }
+    ]
+  },
+  "convergenceItOt": {
+    "kicker": "Convergencia total",
+    "title": "Seguridad física y lógica, un solo blindaje",
+    "headline": "No instalamos equipos, blindamos operaciones",
+    "lead": "Integramos hardware de videovigilancia y control de acceso—CCTV inteligente e intrusión—con ciberdefensa de perímetro: firewalls de nueva generación, segmentación y Zero Trust.",
+    "body": "El mismo criterio de confianza gobierna la planta y la nube: menos puntos ciegos, más trazabilidad y respuesta cuando el riesgo es operativo, no solo de escritorio.",
+    "diagramAria": "Diagrama: cámara y control de acceso conectados a un servidor seguro y a una aplicación móvil, dentro de un escudo de protección",
+    "nodes": {
+      "cctv": "CCTV y control de acceso (perímetro físico)",
+      "server": "Servidor seguro y políticas Zero Trust",
+      "mobile": "App y acceso remoto endurecido"
+    },
+    "shieldCaption": "Un solo perímetro de confianza"
+  },
+  "highlights": {
+    "kicker": "Capacidades en foco",
+    "title": "Lo que estamos activando con clientes hoy",
+    "subtitle": "Tarjetas cortas, alto contraste: prioriza escaneo rapido antes de profundizar en el ecosistema.",
+    "items": [
+      { "id": "h1", "title": "Firewalls de nueva generacion", "detail": "Perimetro y microsegmentacion para plantas y sedes.", "hotLabel": "Alta prioridad" },
+      { "id": "h2", "title": "Enlaces de fibra industrial", "detail": "Backbone resiliente con enfoque en latencia y disponibilidad.", "hotLabel": "En demanda" },
+      { "id": "h3", "title": "Laboratorio Next.js", "detail": "Paneles, SaaS y MarTech conectados a tus datos operativos.", "hotLabel": "Innovacion" },
+      { "id": "h4", "title": "CCTV con analitica IA", "detail": "Video inteligente integrado a politicas de acceso cloud.", "hotLabel": "Cyber-fisico" }
+    ]
+  },
+  "journey": {
+    "kicker": "Tu proyecto en claros pasos",
+    "title": "Asi podria verse tu colaboracion con NUO",
+    "subtitle": "De la auditoria inicial al monitoreo continuo, sin sorpresas: transparencia tipo timeline, adaptada a B2B industrial.",
+    "step": "Paso",
+    "steps": [
+      { "id": "1", "title": "Diagnostico", "description": "Mapeo de riesgos, activos criticos y superficie de ataque OT/IT." },
+      { "id": "2", "title": "Arquitectura", "description": "Diseno ciber-resiliente: red, energia, acceso y politicas Zero Trust." },
+      { "id": "3", "title": "Implementacion", "description": "Integracion de hardware y software, firewalls, servidores y enlaces industriales." },
+      { "id": "4", "title": "Endurecimiento", "description": "Pentesting controlado, hardening y validacion de continuidad." },
+      { "id": "5", "title": "Operacion", "description": "Monitoreo, soporte y evolucion del ecosistema NUO." }
+    ]
+  },
+  "whyNuo": {
+    "kicker": "Por que NUO",
+    "title": "No solo integramos hardware: disenamos ecosistemas donde cada capa nace protegida.",
+    "p1": "Unimos catálogo de clase mundial con fabricantes aliados y arquitectura Zero Trust, redes industriales y laboratorio de software para convertir datos operativos en decisiones.",
+    "p2": "Creemos que la eficiencia operativa y la atencion cercana marcan la diferencia cuando el riesgo es real. Por eso trabajamos con ritmo de ingenieria: claro, medible y sin humo.",
+    "signoff": "NUO Networks"
+  },
+  "closingCta": {
+    "title": "Deja de improvisar tu perimetro industrial",
+    "subtitle": "Hablemos hoy: diagnostico orientado a continuidad, cumplimiento y crecimiento digital.",
+    "whatsappUs": "🇺🇸 Whatsapp USA",
+    "whatsappUsAria": "Abrir WhatsApp USA +1 (424) 355-3283 (NUO Networks)",
+    "whatsappMx": "🇲🇽 Whatsapp Mexico Ops",
+    "whatsappMxAria": "Abrir WhatsApp México operaciones +52 56 3674 1156 (NUO Networks)",
+    "email": "e-mail",
+    "emailAria": "Enviar correo a contact@nuo-networks.com"
+  },
+  "footer": {
+    "blurb": "Infraestructura critica y ciberseguridad industrial para organizaciones que requieren continuidad operativa, resiliencia y crecimiento digital.",
+    "linesTitle": "Lineas de negocio",
+    "line1": "Cyber-Physical Security",
+    "line2": "Critical Infrastructure",
+    "line3": "Cyber-Defense",
+    "line4": "Digital Labs & SaaS",
+    "contactTitle": "Contacto",
+    "usaLegalTitle": "Sede legal (EE. UU.) 🇺🇸",
+    "usaLegalSubtitle": "Corporate HQ Delaware",
+    "usaLegalAddress": "131 Continental Dr, Suite 305\nNewark, DE 19713, US",
+    "mexicoOfficeTitle": "Oficina de operaciones México 🇲🇽",
+    "mexicoOfficeSubtitle": "HQ de operaciones para Latinoamérica",
+    "mexicoOfficeAddress": "Atenas 1-1, Col. San Alvaro, Alcaldía Azcapotzalco, Ciudad de México, C.P. 02090",
+    "emailLabel": "Correo oficial 📧",
+    "usaPhoneLabel": "Teléfono corporativo EE. UU. 🇺🇸",
+    "usaPhoneDisplay": "+1 (424) 355-3283",
+    "whatsappUsLabel": "WhatsApp EE. UU. 🇺🇸",
+    "whatsappUsDisplay": "+1 (424) 355-3283",
+    "whatsappMxLabel": "WhatsApp México 🇲🇽",
+    "whatsappMxDisplay": "+52 56 3674 1156",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Terminos"
+  }
+}

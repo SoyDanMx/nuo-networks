@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 60% 4%;
+    --foreground: 210 40% 93%;
+
+    --card: 220 50% 7%;
+    --card-foreground: 210 40% 93%;
+
+    --popover: 220 50% 7%;
+    --popover-foreground: 210 40% 93%;
+
+    --primary: 187 86% 53%;
+    --primary-foreground: 220 60% 4%;
+
+    --secondary: 292 84% 61%;
+    --secondary-foreground: 220 60% 4%;
+
+    --muted: 220 40% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 187 86% 53%;
+    --accent-foreground: 220 60% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 40% 16%;
+    --input: 220 40% 16%;
+    --ring: 187 86% 53%;
+
+    --radius: 0.5rem;
+
+    --cyber-glow: 187 86% 53%;
+    --cyber-blue: 292 84% 61%;
+    --cyber-surface: 220 50% 7%;
+    --cyber-grid: 220 40% 10%;
+
+    --font-display: var(--font-inter), system-ui, sans-serif;
+    --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+    --gradient-cyber: linear-gradient(135deg, hsl(187 86% 53% / 0.15), hsl(292 84% 61% / 0.15));
+    --gradient-hero: linear-gradient(180deg, hsl(220 60% 4%) 0%, hsl(220 50% 7%) 50%, hsl(220 60% 4%) 100%);
+    --shadow-cyber: 0 0 30px -5px hsl(187 86% 53% / 0.3);
+    --shadow-cyber-lg: 0 0 60px -10px hsl(187 86% 53% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-display);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .cyber-grid-bg {
+    background-image: 
+      linear-gradient(hsl(var(--cyber-grid)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--cyber-grid)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.5), 0 0 40px hsl(var(--cyber-glow) / 0.2);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 15px -3px hsl(var(--cyber-glow) / 0.4), inset 0 0 15px -3px hsl(var(--cyber-glow) / 0.1);
+  }
+
+  .scan-line {
+    background: linear-gradient(180deg, transparent, hsl(var(--cyber-glow) / 0.1), transparent);
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--cyber-glow) / 0.45);
+      opacity: 0.8;
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--cyber-glow) / 0);
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 1.8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-glow {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}
