@@ -77,14 +77,14 @@
     "titleHighlight": "Protected",
     "titleMid": " Infrastructure & ",
     "titleEnd": "Next-Gen Connectivity",
-    "subtitle": "We design industrial networks with a Cybersecurity DNA. Every solution is secured from the architecture up.",
-    "subtitleBold": "Cybersecurity DNA",
-    "chip1": "Integration with leading physical-security vendors",
-    "chip2": "Zero Trust ready",
+    "subtitle": "We design OT/IT architectures with explicit controls; Segmentation & Zero Trust as the frame for verifiable policies and operations-aligned telemetry.",
+    "subtitleBold": "Segmentation & Zero Trust",
+    "chip1": "Cyber-physical integration & reference vendors",
+    "chip2": "Explicit trust model (ZTA)",
     "chip3": "Next.js + TypeScript labs",
     "chipsAria": "Credentials and focus",
     "ctaExplore": "Explore Solutions",
-    "ctaAudit": "Network Assessment",
+    "ctaAudit": "Download your free CPA-10 Scorecard",
     "stat1": "Uptime commitment",
     "stat2": "Active monitoring",
     "stat3": "Zero breach tolerance",
@@ -223,12 +223,25 @@
     }
   },
   "socialRibbon": {
-    "line": "Critical infrastructure in operation",
-    "aria": "Trust indicators",
+    "line": "OT/IT integration with engineering traceability",
+    "aria": "Operational indicators",
     "stats": [
-      { "value": "500+", "label": "Assets under secure architecture" },
-      { "value": "24/7", "label": "Monitoring & response" },
-      { "value": "MX · US", "label": "Cross-border operations" }
+      { "value": "500+", "label": "Assets under segmented design" },
+      { "value": "24/7", "label": "Technical watch & correlation" },
+      { "value": "MX · US", "label": "Cross-border engineering" }
+    ]
+  },
+  "trustTicker": {
+    "kicker": "Partner strip · technical references (grayscale)",
+    "aria": "Trust ticker: Fortinet, Cisco, Ubiquiti, EPCOM, Hikvision, Milestone",
+    "note": "Logos via public resolvers; grayscale with subtle cyan glow on hover.",
+    "brands": [
+      { "id": "fortinet", "label": "Fortinet" },
+      { "id": "cisco", "label": "Cisco" },
+      { "id": "ubiquiti", "label": "Ubiquiti" },
+      { "id": "epcom-professional", "label": "EPCOM" },
+      { "id": "hikvision", "label": "Hikvision" },
+      { "id": "milestone", "label": "Milestone" }
     ]
   },
   "partners": {
@@ -370,20 +383,20 @@
     { "id": "fin", "title": "Services", "subtitle": "Protected data · compliance" }
   ],
   "ecosystem": {
-    "kicker": "NUO Ecosystem",
-    "title": "Business Architecture in 4 Strategic Units",
-    "subtitle": "Technical, clean, futuristic design integrating physical security, critical infrastructure, cyber defense, and digital development in one ecosystem.",
+    "kicker": "Practice lines",
+    "title": "Four integration disciplines under one delivery model",
+    "subtitle": "Cyber-physical, critical infrastructure, network defense, and first-party software—each with named engineering owners, design documentation, and measurable acceptance criteria.",
     "aria": "NUO Ecosystem strategic pillars",
-    "highlightLabel": "Highlight:",
-    "expertBadge": "Expert Badge",
+    "highlightLabel": "Focus:",
+    "expertBadge": "Core practice",
     "pillars": [
       {
         "id": "cyber-physical",
-        "title": "Cyber-Physical Security",
-        "summary": "Intelligent physical protection for critical assets and industrial perimeters.",
-        "provider": "Leading physical-security and access-control vendors",
-        "keywords": ["AI CCTV", "Biometrics", "Hardened intrusion"],
-        "highlight": "Full protection of physical assets"
+        "title": "Cyber-Security OT",
+        "summary": "CCTV and access control segmented against lateral movement: dedicated VLANs, hardened NVRs, and policies that block a video vector from reaching PLCs/SCADA or the office LAN.",
+        "provider": "Integration on leading video and PACS vendors",
+        "keywords": ["CCTV segmentation", "Anti-lateral OT", "Hardened NVR", "SOC correlation"],
+        "highlight": "Video surface bounded to operations"
       },
       {
         "id": "critical-infrastructure",
@@ -404,11 +417,11 @@
       },
       {
         "id": "digital-labs",
-        "title": "Digital Labs & SaaS",
-        "summary": "Software that turns infrastructure data into actionable intelligence.",
-        "provider": "Custom Software Lab",
-        "keywords": ["Custom SaaS", "Web dev", "Mobile apps", "MarTech"],
-        "highlight": "Digital transformation & growth"
+        "title": "Custom Software Labs",
+        "summary": "Secure development (DevSecOps): Next.js, TypeScript, pipelines, and AWS deployment with dependency review, secrets out of repo, and isolated environments.",
+        "provider": "NUO Labs",
+        "keywords": ["DevSecOps", "Next.js / TS", "AWS", "Hardened APIs"],
+        "highlight": "Software with traceability and change control"
       }
     ]
   },
@@ -462,27 +475,155 @@
     "shieldCaption": "One trust perimeter"
   },
   "highlights": {
-    "kicker": "Capabilities in focus",
-    "title": "What we are delivering with clients today",
-    "subtitle": "Short cards, high contrast: scan first, then go deeper into the ecosystem.",
+    "kicker": "Recurring technical scope",
+    "title": "Field integrations we are deploying now",
+    "subtitle": "Scope summary; BOM detail, SLAs, and topology are fixed in the technical proposal.",
     "items": [
-      { "id": "h1", "title": "Next-gen firewalls", "detail": "Perimeter and micro-segmentation for plants and offices.", "hotLabel": "High priority" },
-      { "id": "h2", "title": "Industrial fiber links", "detail": "Resilient backbone focused on latency and availability.", "hotLabel": "In demand" },
-      { "id": "h3", "title": "Next.js lab", "detail": "Dashboards, SaaS, and MarTech wired to your operational data.", "hotLabel": "Innovation" },
-      { "id": "h4", "title": "AI-analytics CCTV", "detail": "Intelligent video aligned with cloud access policies.", "hotLabel": "Cyber-physical" }
+      { "id": "h1", "title": "NGFW & micro-segmentation", "detail": "L7 policies, VPN/IPsec, and OT/corporate zones with reviewable rule sets.", "hotLabel": "Perimeter" },
+      { "id": "h2", "title": "Fiber / transport backbone", "detail": "Ring and link design with MTTR and redundancy matched to process requirements.", "hotLabel": "Transport" },
+      { "id": "h3", "title": "NUO Labs (TypeScript/Next.js)", "detail": "APIs, dashboards, and automation wired to telemetry and B2B flows.", "hotLabel": "Software" },
+      { "id": "h4", "title": "CCTV & physical access", "detail": "Video segmentation, IAM integration, and SOC correlation.", "hotLabel": "Cyber-physical" }
     ]
   },
   "journey": {
-    "kicker": "Your project in clear steps",
-    "title": "How collaboration with NUO could look",
-    "subtitle": "From initial assessment to continuous monitoring—no surprises: timeline-style transparency for industrial B2B.",
-    "step": "Step",
+    "kicker": "Delivery methodology",
+    "title": "Our engineering methodology",
+    "subtitle": "Five phases with technical deliverables and acceptance criteria—from attack surface to operations with governed telemetry.",
+    "step": "Phase",
     "steps": [
-      { "id": "1", "title": "Discovery", "description": "Risk mapping, critical assets, and OT/IT attack surface." },
-      { "id": "2", "title": "Architecture", "description": "Cyber-resilient design: network, power, access, and Zero Trust policies." },
-      { "id": "3", "title": "Implementation", "description": "Hardware and software integration: firewalls, servers, and industrial links." },
-      { "id": "4", "title": "Hardening", "description": "Controlled pentesting, hardening, and continuity validation." },
-      { "id": "5", "title": "Operations", "description": "Monitoring, support, and evolution of the NUO ecosystem." }
+      { "id": "1", "title": "Diagnostics", "description": "OT/IT inventory, attack surface, process dependencies, and segmentation baseline." },
+      { "id": "2", "title": "Architecture", "description": "Zone/conduit design, Zero Trust (identity, L3–L7 policies where applicable), and continuity paths agreed with operations." },
+      { "id": "3", "title": "Implementation", "description": "Network, perimeter security, CCTV/NVR, and services integration; controlled changes with documented rollback." },
+      { "id": "4", "title": "Hardening", "description": "Hardening, controlled testing, baseline validation, and technical handover to operations." },
+      { "id": "5", "title": "Operations", "description": "Correlated monitoring, change management, SLA metrics, and continuous threat-model refinement." }
+    ]
+  },
+  "authorityPartners": {
+    "kicker": "Reference vendors",
+    "title": "Catalog interoperability proven in project delivery",
+    "subtitle": "We integrate on recognized vendors and standards. Logos are indicative via public logo services (not a substitute for official trademarks).",
+    "brands": [
+      { "id": "cisco", "label": "Cisco" },
+      { "id": "fortinet", "label": "Fortinet" },
+      { "id": "epcom-professional", "label": "EPCOM" },
+      { "id": "hikvision", "label": "Hikvision" }
+    ]
+  },
+  "otCyber": {
+    "kicker": "OT Security & Zero Trust Architecture",
+    "title": "OT segmentation, explicit trust, and minimal plant surface",
+    "lead": "IT/OT convergence without a trust model places CCTV, PLCs, and SCADA in the same risk plane as the office. NUO defines zones, conduits, and verifiable policies—every flow needs a technical justification and correlatable telemetry.",
+    "points": [
+      {
+        "title": "Video on dedicated VLANs with trust policies",
+        "body": "NVR/DVR and camera isolation, administrative access control, firmware hardening, and rules that block lateral movement from video into OT or corporate."
+      },
+      {
+        "title": "PLCs, fieldbuses, and bounded OT cells",
+        "body": "IEC 62443-style zone/conduit modeling, L3/L4 filtering where the process allows, live asset inventory, and containment when traffic deviates from baseline."
+      },
+      {
+        "title": "Zero Trust as a design constraint—not a tagline",
+        "body": "Explicit policies for identities and devices; continuous verification across layers the operation can sustain and audit—not “VPN and done.”"
+      },
+      {
+        "title": "SOC with OT/IT context",
+        "body": "Same correlations for perimeter, video, and industrial links; playbooks agreed with maintenance to respond without unnecessary line shutdowns."
+      }
+    ],
+    "disclaimer": "Applicable regulation, vendors, and final topology are fixed in the statement of work; this is NUO’s engineering frame."
+  },
+  "socDashboard": {
+    "kicker": "Active monitoring",
+    "title": "SOC-style preview: telemetry and alerts in one pane",
+    "subtitle": "Operations engineering: KPIs, alert queues, and trend panels—not a one-off install. Illustration only; no customer telemetry.",
+    "panelLabel": "Panel",
+    "panelTitle": "NUO-SOC · preview",
+    "liveBadge": "Live simulation",
+    "kpis": [
+      { "label": "Normalized events / 24h", "value": "2.4M" },
+      { "label": "Queued alerts", "value": "18" },
+      { "label": "Response SLA (target)", "value": "< 15 min" }
+    ],
+    "chartBarsTitle": "Volume by vector (simulated)",
+    "chartLineTitle": "Severity trend (simulated)",
+    "alertChip": "2 new correlations",
+    "simDisclaimer": "Fictional data for illustration. In production we wire your real sources and agreed rules."
+  },
+  "softwareHardware": {
+    "kicker": "Software vs hardware",
+    "title": "We ship product; we do not only configure boxes",
+    "lead": "Clients should see two clear offers: integrating catalog gear and software layers NUO builds and runs as SaaS or custom dashboards.",
+    "hardwareTitle": "Hardware and vendors (integration)",
+    "hardwareBullets": [
+      "Selection of firewalls, switching, CCTV, and links for your plant and carriers.",
+      "Rollout, segmentation, and policies aligned to Zero Trust and continuity.",
+      "Direct engineering support on what we deploy, with living documentation."
+    ],
+    "softwareTitle": "Software, SaaS, and automation (NUO Labs)",
+    "softwareBullets": [
+      "First-party panels, APIs, and microservices: observability, MarTech, and B2B flows.",
+      "Hardened code (TypeScript/Next.js) with controlled, versioned releases.",
+      "Integration to your operational data—from network insight to governed actions."
+    ]
+  },
+  "industryUseCases": {
+    "kicker": "Use cases",
+    "title": "Three ways we harden operations",
+    "cards": [
+      {
+        "title": "Secure logistics",
+        "body": "Dock and yard CCTV, access control, resilient links, and segmentation so an office incident does not stop the supply chain."
+      },
+      {
+        "title": "Manufacturing 4.0",
+        "body": "PLCs, sensors, and lines protected with OT zones, IT correlation, and continuous monitoring without sacrificing process latency."
+      },
+      {
+        "title": "Hardened enterprises",
+        "body": "HQs and data paths with SD-WAN, Zero Trust, and consistent policy across cloud, remote users, and plant visits."
+      }
+    ]
+  },
+  "engineeringPhilosophy": {
+    "kicker": "NUO engineering",
+    "title": "Our design philosophy",
+    "quotes": [
+      {
+        "quote": "Resilience is not a hotfix: it is the choice to assume failure and contain it before it stops the line.",
+        "attribution": "Operational continuity"
+      },
+      {
+        "quote": "If you cannot observe it with OT/IT context, you cannot defend it: telemetry and traceability are part of design, not an add-on.",
+        "attribution": "Unified observability"
+      },
+      {
+        "quote": "Less surface, more clarity: every port and flow needs an owner and a measurable purpose.",
+        "attribution": "Systematic hardening"
+      }
+    ]
+  },
+  "threatIntel": {
+    "kicker": "Threat intelligence",
+    "title": "Recent context (Mexico)",
+    "subtitle": "Links to curated Google News searches; NUO does not edit those outlets. They keep the technical conversation current.",
+    "disclaimer": "Headlines describe each search focus. Results are third-party and change over time. For tailored analysis, book time with engineering.",
+    "items": [
+      {
+        "title": "Cyberattacks and incidents in Mexico",
+        "source": "Google News · live search",
+        "href": "https://news.google.com/search?q=cyber+attacks+Mexico&hl=en&gl=MX&ceid=MX%3Aen"
+      },
+      {
+        "title": "Ransomware and extortion targeting businesses in Mexico",
+        "source": "Google News · live search",
+        "href": "https://news.google.com/search?q=ransomware+Mexico+business&hl=en&gl=MX&ceid=MX%3Aen"
+      },
+      {
+        "title": "Industrial cybersecurity, SCADA, and plants",
+        "source": "Google News · live search",
+        "href": "https://news.google.com/search?q=industrial+cybersecurity+SCADA+Mexico&hl=en&gl=MX&ceid=MX%3Aen"
+      }
     ]
   },
   "whyNuo": {
@@ -492,14 +633,118 @@
     "p2": "We believe operational efficiency and close attention make the difference when risk is real. That is why we work with an engineering cadence: clear, measurable, no fluff.",
     "signoff": "NUO Networks"
   },
+  "cpa10Modal": {
+    "badge": "CPA-10 · NUO methodology",
+    "headline": "Schedule your CPA-10 assessment today",
+    "subhead": "CPA-10 (Cyber-Physical Audit - 10) is NUO Networks' own framework built for the Mexican industrial market.",
+    "frameworkIntro": "It is not an externally imposed international standard. It is our authored service-mark methodology to diagnose your IT + OT attack surface across 10 critical pillars. CPA-10 aligns with ISO 27001 and IEC 62443 control families, while remaining optimized for agile implementation across IT/OT infrastructure.",
+    "pillarsTitle": "The 10 CPA-10 pillars",
+    "pillars": [
+      {
+        "id": "1",
+        "title": "Logical perimeter",
+        "category": "Cybersecurity",
+        "detail": "Firewall posture and traffic filtering rules."
+      },
+      {
+        "id": "2",
+        "title": "Physical perimeter",
+        "category": "CCTV / Access",
+        "detail": "Effectiveness of AI cameras and access-control barriers."
+      },
+      {
+        "id": "3",
+        "title": "Identity",
+        "category": "Zero Trust",
+        "detail": "Password governance and multi-factor authentication (MFA)."
+      },
+      {
+        "id": "4",
+        "title": "OT network",
+        "category": "Networking",
+        "detail": "Industrial device isolation to prevent lateral movement."
+      },
+      {
+        "id": "5",
+        "title": "Resilience",
+        "category": "Energy",
+        "detail": "UPS and solar continuity response during outages."
+      },
+      {
+        "id": "6",
+        "title": "Endpoints",
+        "category": "Cybersecurity",
+        "detail": "Antivirus/EDR protection across servers and workstations."
+      },
+      {
+        "id": "7",
+        "title": "Data",
+        "category": "Encryption",
+        "detail": "How sensitive files are stored and transmitted (AES-256)."
+      },
+      {
+        "id": "8",
+        "title": "Backup",
+        "category": "Continuity",
+        "detail": "Validation of offline backups (air-gapped backups)."
+      },
+      {
+        "id": "9",
+        "title": "Applications",
+        "category": "Software",
+        "detail": "Vulnerability assessment for web apps and SaaS software."
+      },
+      {
+        "id": "10",
+        "title": "Human factor",
+        "category": "Awareness",
+        "detail": "Phishing tests and digital-security culture maturity."
+      }
+    ],
+    "closeAria": "Close",
+    "fieldName": "Name",
+    "fieldEmail": "Work email",
+    "fieldConcern": "Primary concern",
+    "placeholderName": "Full name",
+    "placeholderEmail": "you@company.com",
+    "concernPlaceholder": "Select an option",
+    "concerns": [
+      { "id": "ransomware", "label": "Ransomware / extortion" },
+      { "id": "physical", "label": "Physical security / video" },
+      { "id": "network", "label": "Network failure / availability" }
+    ],
+    "submit": "Get my CPA-10 scorecard",
+    "disclaimer": "Submitting opens your mail client with this data; we do not store it in this form.",
+    "mailSubject": "Lead: CPA-10 assessment (NUO Networks)",
+    "emailBodyName": "Name",
+    "emailBodyEmail": "Email",
+    "emailBodyConcern": "Concern",
+    "emailBodyFooter": "Source: NUO landing · CPA-10",
+    "errorName": "Enter at least 2 characters.",
+    "errorEmail": "Use a valid work email.",
+    "errorConcern": "Select a primary concern."
+  },
+  "cyberAuditFab": {
+    "label": "CPA-10 scorecard",
+    "aria": "Open CPA-10 scorecard request",
+    "whatsappLabel": "Request Services",
+    "whatsappAria": "Open WhatsApp USA to request services",
+    "mailSubject": "Request: OT/IT Cyber-Audit (NUO Networks)"
+  },
   "closingCta": {
     "title": "Stop improvising your industrial perimeter",
-    "subtitle": "Talk today: assessment focused on continuity, compliance, and digital growth.",
+    "subtitle": "Schedule a technical session: OT/IT surface review, operational continuity, and compliance framing for the agreed scope.",
     "whatsappUs": "🇺🇸 Whatsapp USA",
     "whatsappUsAria": "Open WhatsApp USA +1 (424) 355-3283 (NUO Networks)",
     "whatsappMx": "🇲🇽 Whatsapp Mexico Ops",
     "whatsappMxAria": "Open WhatsApp Mexico ops +52 56 3674 1156 (NUO Networks)",
-    "email": "e-mail",
+    "ctaVuln": "Schedule your CPA-10 assessment",
+    "ctaVulnAria": "Email to schedule a CPA-10 assessment",
+    "mailSubjectVuln": "Request: CPA-10 assessment (NUO)",
+    "ctaZeroTrust": "Design my Zero Trust architecture",
+    "ctaZeroTrustAria": "Email to design Zero Trust architecture",
+    "mailSubjectZeroTrust": "Request: Zero Trust architecture (NUO)",
+    "email": "General email",
     "emailAria": "Send email to contact@nuo-networks.com"
   },
   "footer": {
@@ -525,6 +770,13 @@
     "whatsappMxDisplay": "+52 56 3674 1156",
     "rights": "All rights reserved.",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "certsTitle": "Compliance framework (engineering)",
+    "certsNote": "Alignment to good practice; formal scope and evidence are defined per contract and jurisdiction.",
+    "certs": [
+      { "id": "nist", "label": "NIST CSF / 800-53" },
+      { "id": "gdpr", "label": "GDPR / EU privacy" },
+      { "id": "nom", "label": "NOM-151 / MX" }
+    ]
   }
 }

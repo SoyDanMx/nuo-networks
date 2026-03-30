@@ -22,14 +22,6 @@ const toneById: Record<string, PillarTone> = {
   "digital-labs": "magenta"
 };
 
-/** CrowdStrike / Cloudflare-style glass bento + neon stroke */
-const toneStyles: Record<PillarTone, string> = {
-  cyan:
-    "border-cyan-500/25 bg-white/[0.035] hover:border-cyan-400/55 hover:shadow-[0_0_0_1px_hsl(187_86%_53%/0.45),0_0_48px_hsl(187_86%_53%/0.22)]",
-  magenta:
-    "border-fuchsia-500/25 bg-white/[0.035] hover:border-fuchsia-400/55 hover:shadow-[0_0_0_1px_hsl(292_84%_61%/0.45),0_0_48px_hsl(292_84%_61%/0.2)]"
-};
-
 const iconToneStyles: Record<PillarTone, string> = {
   cyan: "border-cyan-500/40 bg-cyan-500/10 text-cyan-400",
   magenta: "border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-400"
@@ -54,7 +46,7 @@ const CyberShieldSection = (): JSX.Element => {
   return (
     <section
       id="nuo-ecosystem"
-      className="relative overflow-hidden border-y border-cyan-500/10 bg-[#020617] px-6 py-20 md:py-28"
+      className="relative overflow-hidden border-y border-cyan-500/10 bg-[#020617] px-4 py-16 sm:px-6 sm:py-20 md:py-28"
       aria-label={eco.aria}
     >
       <div className="absolute inset-0 cyber-grid-bg opacity-[0.12]" aria-hidden="true" />
@@ -63,7 +55,7 @@ const CyberShieldSection = (): JSX.Element => {
         aria-hidden="true"
       />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="container relative z-10 mx-auto min-w-0 max-w-7xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.22em] text-cyan-400">{eco.kicker}</p>
           <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
@@ -85,7 +77,7 @@ const CyberShieldSection = (): JSX.Element => {
                 whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: index * 0.06, duration: 0.45 }}
-                className={`group relative overflow-hidden rounded-2xl border p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${toneStyles[tone]}`}
+                className="group relative card-glass-neon-cyan overflow-hidden rounded-2xl p-6 hover:-translate-y-1"
               >
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 

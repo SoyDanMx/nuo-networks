@@ -28,7 +28,7 @@ const BrandsPageContent = (): JSX.Element => {
           aria-hidden
         />
 
-        <div className="container relative z-10 mx-auto max-w-5xl px-6 pb-20 pt-28 md:pt-32">
+        <div className="container relative z-10 mx-auto min-w-0 max-w-5xl px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 md:pt-32">
           <Link
             href={homeHref}
             className="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-cyan-400"

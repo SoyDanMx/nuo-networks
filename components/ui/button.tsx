@@ -11,9 +11,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   cyber:
-    "border border-primary/40 bg-transparent text-primary hover:border-primary hover:bg-primary/10 hover:shadow-nuo-cyan",
+    "btn-drop-shadow-magenta border border-primary/40 bg-transparent text-primary hover:border-primary hover:bg-primary/10 hover:shadow-nuo-cyan",
   "cyber-solid":
-    "border border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-nuo-cyan"
+    "btn-drop-shadow-cyan border border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-nuo-cyan"
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

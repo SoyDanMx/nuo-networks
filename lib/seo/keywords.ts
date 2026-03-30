@@ -4,6 +4,9 @@ import type { Locale } from "@/lib/i18n/config";
 const HOME_KEYWORDS: Record<Locale, string[]> = {
   es: [
     "NUO Networks",
+    "Integrador de Ciberseguridad México",
+    "Seguridad Electrónica Industrial",
+    "Networking EPCOM CDMX",
     "ciberseguridad industrial",
     "infraestructura crítica",
     "OT/IT",
@@ -21,6 +24,9 @@ const HOME_KEYWORDS: Record<Locale, string[]> = {
   ],
   en: [
     "NUO Networks",
+    "industrial cybersecurity integrator Mexico",
+    "EPCOM networking Mexico City",
+    "industrial electronic security",
     "industrial cybersecurity",
     "critical infrastructure",
     "OT/IT",

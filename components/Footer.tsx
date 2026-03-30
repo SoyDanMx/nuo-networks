@@ -3,7 +3,7 @@
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { BadgeCheck, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import {
   NUO_CONTACT_EMAIL,
@@ -23,7 +23,7 @@ const Footer = (): JSX.Element => {
 
   return (
     <footer id="contact" className="scroll-mt-24 border-t border-border/70 bg-card/40">
-      <div className="container mx-auto grid gap-10 px-6 py-14 lg:grid-cols-12 lg:gap-12">
+      <div className="container mx-auto grid min-w-0 gap-10 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-12 lg:gap-12">
         <section className="lg:col-span-4">
           <Image
             src="/logos/nuo-logo-white.png"
@@ -118,8 +118,26 @@ const Footer = (): JSX.Element => {
         </section>
       </div>
 
+      <div className="border-t border-border/60 bg-black/20">
+        <div className="container mx-auto min-w-0 px-4 py-6 sm:px-6 sm:py-8">
+          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">{f.certsTitle}</p>
+          <ul className="mx-auto mt-4 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            {f.certs.map((cert) => (
+              <li
+                key={cert.id}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-foreground/90"
+              >
+                <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-cyan-500/80" aria-hidden />
+                <span>{cert.label}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-[11px] leading-relaxed text-muted-foreground">{f.certsNote}</p>
+        </div>
+      </div>
+
       <div className="border-t border-border/70">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-3 px-6 py-5 text-xs text-muted-foreground md:flex-row">
+        <div className="container mx-auto flex min-w-0 flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-muted-foreground sm:px-6 sm:py-5 md:flex-row">
           <p>
             © {new Date().getFullYear()} NUO Networks. {f.rights}
           </p>

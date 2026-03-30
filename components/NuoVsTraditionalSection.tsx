@@ -33,7 +33,7 @@ const NuoVsTraditionalSection = (): JSX.Element => {
   return (
     <section
       id="nuo-diferencial"
-      className="relative overflow-hidden border-y border-fuchsia-500/10 bg-[#020617] px-6 py-20 md:py-28"
+      className="relative overflow-hidden border-y border-fuchsia-500/10 bg-[#020617] px-4 py-16 sm:px-6 md:py-20 lg:py-28"
       aria-label={c.aria}
     >
       <div className="absolute inset-0 cyber-grid-bg opacity-[0.1]" aria-hidden />
@@ -42,7 +42,7 @@ const NuoVsTraditionalSection = (): JSX.Element => {
         aria-hidden
       />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="container relative z-10 mx-auto min-w-0 max-w-7xl">
         <motion.div
           className="mx-auto mb-12 max-w-3xl text-center md:mb-16"
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
@@ -58,12 +58,13 @@ const NuoVsTraditionalSection = (): JSX.Element => {
         </motion.div>
 
         {/* Desktop / tablet: high-tech comparison grid */}
-        <div className="hidden md:block">
-          <div
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md"
-            role="table"
-            aria-label={c.aria}
-          >
+        <div className="hidden min-w-0 md:block">
+          <div className="-mx-1 overflow-x-auto overscroll-x-contain pb-1 sm:mx-0 md:overflow-x-visible">
+            <div
+              className="min-w-[36rem] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md lg:min-w-0"
+              role="table"
+              aria-label={c.aria}
+            >
             <div
               className="grid grid-cols-[minmax(8rem,10rem)_1fr_1fr] gap-px bg-white/5 font-mono text-[10px] uppercase tracking-[0.18em] md:grid-cols-[minmax(10rem,12rem)_1fr_1fr]"
               role="rowgroup"
@@ -134,6 +135,7 @@ const NuoVsTraditionalSection = (): JSX.Element => {
                 </motion.div>
               ))}
             </div>
+          </div>
           </div>
         </div>
 

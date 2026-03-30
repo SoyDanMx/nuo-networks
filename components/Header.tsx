@@ -41,7 +41,7 @@ const Header = (): JSX.Element => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-cyan-500/15 bg-[#020617]/85 backdrop-blur-xl">
-      <div className="container mx-auto flex h-20 items-center justify-between gap-4 px-6">
+      <div className="container mx-auto flex h-20 min-w-0 items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <Link
           href={homeHref as Route}
           className="inline-flex shrink-0 items-center"

@@ -13,7 +13,7 @@ const CapabilityHighlights = (): JSX.Element => {
   return (
     <section
       id="highlights"
-      className="relative overflow-hidden border-b border-border/60 px-6 py-16 md:py-20"
+      className="relative overflow-hidden border-b border-border/60 px-4 py-14 sm:px-6 sm:py-16 md:py-20"
       aria-labelledby="highlights-heading"
     >
       <div
@@ -21,7 +21,7 @@ const CapabilityHighlights = (): JSX.Element => {
         aria-hidden="true"
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent" aria-hidden="true" />
-      <div className="container relative mx-auto max-w-6xl">
+      <div className="container relative mx-auto min-w-0 max-w-6xl">
         <div className="mb-10 text-center md:text-left">
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">{h.kicker}</p>
           <h2
@@ -41,7 +41,7 @@ const CapabilityHighlights = (): JSX.Element => {
               whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.35 }}
-              className="flex gap-4 rounded-2xl border border-border/70 bg-gradient-to-br from-card/80 via-card/50 to-card/30 p-5 shadow-[0_0_0_1px_hsl(var(--primary)/0.06)] backdrop-blur-sm transition-all hover:border-primary/45 hover:shadow-[0_0_32px_hsl(var(--primary)/0.18),0_0_0_1px_hsl(var(--primary)/0.12)]"
+              className="card-glass-neon-cyan flex gap-4 rounded-2xl p-5"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-secondary/40 bg-secondary/10 text-secondary">
                 <Flame className="h-5 w-5" aria-hidden="true" />

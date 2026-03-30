@@ -6,11 +6,13 @@ import { Shield, ArrowRight, Search } from "lucide-react";
 import HeroNeuralField from "@/components/HeroNeuralField";
 import HeroThreatMap from "@/components/HeroThreatMap";
 import { Button } from "@/components/ui/button";
+import { useCpa10LeadModal } from "@/components/Cpa10LeadModalProvider";
 import { useI18n } from "@/lib/i18n/provider";
 import { localizedHash } from "@/lib/i18n/paths";
 
 const HeroSection = (): JSX.Element => {
   const { locale, messages } = useI18n();
+  const { openCpa10Modal } = useCpa10LeadModal();
   const hero = messages.hero;
   const chips = [hero.chip1, hero.chip2, hero.chip3];
 
@@ -30,7 +32,7 @@ const HeroSection = (): JSX.Element => {
         transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="container relative z-10 w-full px-6 pb-8 pt-4 md:pb-12">
+      <div className="container relative z-10 w-full min-w-0 max-w-full px-4 pb-8 pt-4 sm:px-6 md:pb-12">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
           <motion.div
             className="mx-auto max-w-4xl text-center lg:mx-0 lg:max-w-none lg:text-left"
@@ -39,7 +41,7 @@ const HeroSection = (): JSX.Element => {
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/35 bg-cyan-500/10 px-4 py-2 backdrop-blur-sm"
+              className="mb-6 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-cyan-500/35 bg-cyan-500/10 px-3 py-2 backdrop-blur-sm sm:px-4"
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.12 }}
@@ -48,7 +50,7 @@ const HeroSection = (): JSX.Element => {
               <span className="font-mono text-xs text-cyan-400 md:text-sm">{hero.badge}</span>
             </motion.div>
 
-            <h1 className="mb-6 font-heading text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 break-words font-heading text-3xl font-bold leading-[1.08] tracking-tight text-foreground min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="block text-foreground">{hero.titleLine1}</span>
               <span className="mt-1 block">
                 <span className="glow-text bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
@@ -62,7 +64,7 @@ const HeroSection = (): JSX.Element => {
             </h1>
 
             <motion.p
-              className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl lg:mx-0"
+              className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl lg:mx-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.28 }}
@@ -89,7 +91,7 @@ const HeroSection = (): JSX.Element => {
               {chips.map((chip) => (
                 <span
                   key={chip}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+                  className="max-w-full break-words rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-muted-foreground backdrop-blur-sm sm:text-xs"
                 >
                   {chip}
                 </span>
@@ -97,28 +99,33 @@ const HeroSection = (): JSX.Element => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
+              className="flex w-full max-w-xl flex-col items-stretch justify-center gap-3 min-[400px]:flex-row min-[400px]:items-center min-[400px]:justify-center lg:max-w-none lg:justify-start"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.48 }}
             >
-              <a href={localizedHash(locale, "#nuo-ecosystem")}>
-                <Button variant="cyber-solid" size="lg" className="px-8 py-6 text-base shadow-nuo-cyan">
-                  <Shield className="mr-2 h-5 w-5" />
-                  {hero.ctaExplore}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+              <a
+                href={localizedHash(locale, "#nuo-ecosystem")}
+                className="nuo-focus btn-drop-shadow-cyan inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-xl border border-primary bg-primary px-4 py-4 text-sm font-semibold text-primary-foreground shadow-nuo-cyan transition-all duration-300 hover:bg-primary/90 min-[400px]:w-auto min-[400px]:px-8 min-[400px]:py-6 min-[400px]:text-base"
+              >
+                <Shield className="h-5 w-5 shrink-0" aria-hidden />
+                <span className="text-center">{hero.ctaExplore}</span>
+                <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
               </a>
-              <a href={localizedHash(locale, "#journey")}>
-                <Button variant="cyber" size="lg" className="px-8 py-6 text-base">
-                  <Search className="mr-2 h-5 w-5" />
-                  {hero.ctaAudit}
-                </Button>
-              </a>
+              <Button
+                type="button"
+                variant="cyber"
+                size="lg"
+                className="w-full min-w-0 px-4 py-4 text-sm min-[400px]:w-auto min-[400px]:px-8 min-[400px]:py-6 min-[400px]:text-base"
+                onClick={openCpa10Modal}
+              >
+                <Search className="mr-2 h-5 w-5 shrink-0" />
+                <span className="text-center">{hero.ctaAudit}</span>
+              </Button>
             </motion.div>
 
             <motion.div
-              className="mx-auto mt-14 grid max-w-xl grid-cols-3 gap-6 lg:mx-0"
+              className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-3 sm:mt-14 sm:gap-6 lg:mx-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.62 }}

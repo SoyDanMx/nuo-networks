@@ -160,7 +160,7 @@ const ConvergenceItOtSection = (): JSX.Element => {
   return (
     <section
       id="convergencia-it-ot"
-      className="relative overflow-hidden bg-[#020617] px-6 py-20 md:py-28"
+      className="relative overflow-hidden bg-[#020617] px-4 py-16 sm:px-6 sm:py-20 md:py-28"
       aria-labelledby="convergence-heading"
     >
       <div className="absolute inset-0 cyber-grid-bg opacity-[0.09]" aria-hidden />

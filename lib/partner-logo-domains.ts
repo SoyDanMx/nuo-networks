@@ -3,6 +3,10 @@
  * Ajusta si una marca no resuelve bien; no son logotipos oficiales incrustados en el repo.
  */
 export const PARTNER_LOGO_DOMAIN_BY_ID: Record<string, string> = {
+  cisco: "cisco.com",
+  fortinet: "fortinet.com",
+  ubiquiti: "ui.com",
+  milestone: "milestonesys.com",
   "epcom-professional": "epcom.net",
   hikvision: "hikvision.com",
   grandstream: "grandstream.com",

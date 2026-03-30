@@ -14,7 +14,7 @@ const ThreatMapComparisonSection = (): JSX.Element => {
   return (
     <section
       id="threat-map-compare"
-      className="relative overflow-hidden border-y border-cyan-500/10 bg-[#020617] px-6 py-16 md:py-24"
+      className="relative overflow-hidden border-y border-cyan-500/10 bg-[#020617] px-4 py-14 sm:px-6 sm:py-16 md:py-24"
       aria-labelledby="threat-map-compare-heading"
     >
       <div className="absolute inset-0 cyber-grid-bg opacity-[0.08]" aria-hidden />
@@ -23,7 +23,7 @@ const ThreatMapComparisonSection = (): JSX.Element => {
         aria-hidden
       />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="container relative z-10 mx-auto min-w-0 max-w-7xl">
         <motion.div
           className="mx-auto mb-10 max-w-3xl text-center md:mb-14"
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}

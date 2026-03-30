@@ -7,8 +7,8 @@ const WhyNuoSection = (): JSX.Element => {
   const w = messages.whyNuo;
 
   return (
-    <section className="px-6 py-16 md:py-20" aria-labelledby="why-nuo-heading">
-      <div className="container mx-auto max-w-3xl text-center">
+    <section className="px-4 py-14 sm:px-6 sm:py-16 md:py-20" aria-labelledby="why-nuo-heading">
+      <div className="container mx-auto min-w-0 max-w-3xl text-center">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-secondary">{w.kicker}</p>
         <h2
           id="why-nuo-heading"

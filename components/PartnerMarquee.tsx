@@ -21,7 +21,7 @@ const PartnerMarquee = (): JSX.Element => {
       className="border-b border-border/60 bg-[#020617]/90 py-8"
       aria-label={p.aria}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto min-w-0 px-4 sm:px-6">
         <p className="mb-2 text-center font-mono text-[10px] uppercase tracking-[0.28em] text-primary/90">{p.kicker}</p>
         <p className="mb-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/90">
           <Link

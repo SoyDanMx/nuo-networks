@@ -76,14 +76,14 @@ const SolutionsMegaMenu = (): JSX.Element => {
               id={panelId}
               role="region"
               aria-label={menu.panelAria}
-              className="fixed left-0 right-0 top-20 z-50 border-b border-primary/20 bg-[#020617]/95 shadow-[0_28px_80px_-24px_hsl(var(--primary)/0.35)] backdrop-blur-xl"
+              className="fixed left-0 right-0 top-20 z-50 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-b border-primary/20 bg-[#020617]/95 shadow-[0_28px_80px_-24px_hsl(var(--primary)/0.35)] backdrop-blur-xl"
               initial={{ opacity: 0, y: reduceMotion ? 0 : -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: reduceMotion ? 0 : -6 }}
               transition={{ duration, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="pointer-events-auto container mx-auto max-w-7xl px-6 py-10">
-                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-8">
+              <div className="pointer-events-auto container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
+                <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 xl:grid-cols-5 xl:gap-8">
                   {menu.columns.map((col) => (
                     <div key={col.id}>
                       <h3 className="mb-4 border-b border-border/60 pb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">

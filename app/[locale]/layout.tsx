@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { Cpa10LeadModalProvider } from "@/components/Cpa10LeadModalProvider";
 import { GlobalStructuredDataJsonLd } from "@/components/seo/GlobalStructuredDataJsonLd";
+import { getHomeKeywords } from "@/lib/seo/keywords";
 import { I18nProvider } from "@/lib/i18n/provider";
 import { buildOpenGraph, buildTwitter } from "@/lib/seo/open-graph";
 import { defaultRobots } from "@/lib/seo/site";
@@ -32,6 +34,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
     return {
       title,
       description,
+      keywords: getHomeKeywords("en"),
       robots: defaultRobots,
       alternates: {
         canonical: "https://nuo-networks.com/en",
@@ -57,6 +60,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
   return {
     title,
     description,
+    keywords: getHomeKeywords("es"),
     robots: defaultRobots,
     alternates: {
       canonical: "https://nuo-networks.com/",
@@ -85,7 +89,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps): J
     <>
       <GlobalStructuredDataJsonLd locale={params.locale} />
       <I18nProvider locale={params.locale} messages={messages}>
-        {children}
+        <Cpa10LeadModalProvider>{children}</Cpa10LeadModalProvider>
       </I18nProvider>
     </>
   );

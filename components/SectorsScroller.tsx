@@ -25,7 +25,7 @@ const SectorsScroller = (): JSX.Element => {
       className="border-b border-border/60 py-14 md:py-16"
       aria-labelledby="sectors-scroller-heading"
     >
-      <div className="container mx-auto mb-6 px-6">
+      <div className="container mx-auto mb-6 min-w-0 px-4 sm:px-6">
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-secondary">
@@ -44,7 +44,7 @@ const SectorsScroller = (): JSX.Element => {
 
       <div className="relative">
         <div
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 pt-1 md:px-[max(1.5rem,calc(50vw-40rem))]"
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 pt-1 [-webkit-overflow-scrolling:touch] sm:gap-4 sm:px-6 md:px-[max(1.5rem,calc(50vw-40rem))]"
           style={{ scrollbarWidth: "thin" }}
         >
           {cards.map((item, index) => {
@@ -56,7 +56,7 @@ const SectorsScroller = (): JSX.Element => {
                 whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: index * 0.06, duration: 0.35 }}
-                className={`min-w-[240px] max-w-[260px] shrink-0 snap-start rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`min-w-[min(85vw,260px)] max-w-[260px] shrink-0 snap-start rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 sm:min-w-[240px] sm:p-5 ${
                   accent === "cyan"
                     ? "border-primary/35 bg-card/80 hover:border-primary/60 hover:shadow-[0_0_24px_hsl(var(--primary)/0.2)]"
                     : "border-secondary/35 bg-card/80 hover:border-secondary/60 hover:shadow-[0_0_24px_hsl(var(--secondary)/0.2)]"

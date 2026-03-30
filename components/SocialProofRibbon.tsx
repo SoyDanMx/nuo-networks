@@ -25,21 +25,21 @@ const SocialProofRibbon = (): JSX.Element => {
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,hsl(var(--primary)/0.04)_0%,transparent_35%,hsl(var(--secondary)/0.05)_100%)]"
         aria-hidden="true"
       />
-      <div className="container relative mx-auto flex flex-wrap items-center justify-center gap-6 px-6 py-4 md:justify-between md:gap-8">
-        <p className="order-last flex w-full items-center justify-center gap-2 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-primary md:order-first md:w-auto md:justify-start md:text-left">
+      <div className="container relative mx-auto flex min-w-0 flex-col items-stretch gap-4 px-4 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-6 sm:px-6 md:justify-between md:gap-8">
+        <p className="order-last flex w-full min-w-0 items-center justify-center gap-2 text-center font-mono text-[10px] uppercase leading-snug tracking-[0.18em] text-primary sm:text-[11px] sm:tracking-[0.2em] md:order-first md:w-auto md:justify-start md:text-left">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50 opacity-60 motion-reduce:animate-none motion-reduce:opacity-100" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.8)]" />
           </span>
           {s.line}
         </p>
-        <ul className="flex flex-wrap items-stretch justify-center gap-4 md:gap-5">
+        <ul className="flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:justify-center md:gap-5">
           {stats.map((stat, i) => {
             const Icon = icons[i] ?? Activity;
             return (
               <li
                 key={stat.label}
-                className="flex min-w-[10rem] items-center gap-3 rounded-xl border border-primary/20 bg-card/60 px-4 py-3 shadow-[0_0_24px_-8px_hsl(var(--primary)/0.25),inset_0_1px_0_0_hsl(var(--primary)/0.08)] md:min-w-0"
+                className="flex min-w-0 flex-1 items-center gap-3 rounded-xl border border-primary/20 bg-card/60 px-3 py-3 shadow-[0_0_24px_-8px_hsl(var(--primary)/0.25),inset_0_1px_0_0_hsl(var(--primary)/0.08)] sm:min-w-[10rem] sm:flex-none sm:px-4 md:min-w-0"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary">
                   <Icon className="h-4 w-4" aria-hidden="true" />
