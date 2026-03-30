@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { defaultLocale, isLocale } from "@/lib/i18n/config";
+/**
+ * Edge middleware must not import app aliases (@/) — Vercel Edge flags them as unsupported.
+ * Keep locale checks inline; source of truth remains lib/i18n/config.ts for the app.
+ */
+const DEFAULT_LOCALE = "es" as const;
+const LOCALE_SET = new Set<string>(["es", "en"]);
+
+function isLocaleSegment(value: string): boolean {
+  return LOCALE_SET.has(value);
+}
 
 export function middleware(request: NextRequest): NextResponse {
   const { pathname } = request.nextUrl;
@@ -17,8 +26,8 @@ export function middleware(request: NextRequest): NextResponse {
   const segments = pathname.split("/").filter(Boolean);
   const first = segments[0];
 
-  if (first && isLocale(first)) {
-    if (first === defaultLocale) {
+  if (first && isLocaleSegment(first)) {
+    if (first === DEFAULT_LOCALE) {
       const rest = segments.slice(1).join("/");
       const url = request.nextUrl.clone();
       url.pathname = rest ? `/${rest}` : "/";
@@ -28,7 +37,7 @@ export function middleware(request: NextRequest): NextResponse {
   }
 
   const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/${DEFAULT_LOCALE}${pathname === "/" ? "" : pathname}`;
   return NextResponse.rewrite(url);
 }
 

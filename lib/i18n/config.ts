@@ -1,3 +1,4 @@
+/** If you change order or codes, update the duplicate set in `middleware.ts` (Edge cannot import this file). */
 export const locales = ["es", "en"] as const;
 
 export type Locale = (typeof locales)[number];
