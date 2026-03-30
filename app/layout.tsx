@@ -75,8 +75,13 @@ export const metadata: Metadata = {
       "Integrador de infraestructura crítica y ciberseguridad industrial. México y Estados Unidos."
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "554x450" }],
-    shortcut: "/icon.png",
+    /** 48px primero: muchas pestañas eligen un tamaño pequeño; el PNG es cuadrado con isotipo al ~90%. */
+    icon: [
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" }
+    ],
+    shortcut: "/icon-48.png",
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   }
 };

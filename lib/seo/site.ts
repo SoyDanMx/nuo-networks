@@ -5,8 +5,8 @@ import type { Locale } from "@/lib/i18n/config";
 export const SITE_URL = "https://nuo-networks.com" as const;
 export const SITE_NAME = "NUO Networks" as const;
 
-/** Public asset used for Open Graph / Twitter when no route-specific image exists */
-export const DEFAULT_OG_IMAGE_PATH = "/nuo-mark.svg" as const;
+/** Public asset used for Open Graph / Twitter when no route-specific image exists (512² isotipo) */
+export const DEFAULT_OG_IMAGE_PATH = "/icon.png" as const;
 
 export const CONTACT_EMAIL = "contact@nuo-networks.com";
 

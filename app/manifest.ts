@@ -16,8 +16,14 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "es-MX",
     icons: [
       {
+        src: "/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any"
+      },
+      {
         src: "/icon.png",
-        sizes: "554x450",
+        sizes: "512x512",
         type: "image/png",
         purpose: "any"
       },
