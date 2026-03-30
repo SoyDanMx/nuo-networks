@@ -73,6 +73,11 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description:
       "Integrador de infraestructura crítica y ciberseguridad industrial. México y Estados Unidos."
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "554x450" }],
+    shortcut: "/icon.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   }
 };
 

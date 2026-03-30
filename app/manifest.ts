@@ -16,10 +16,16 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "es-MX",
     icons: [
       {
+        src: "/icon.png",
+        sizes: "554x450",
+        type: "image/png",
+        purpose: "any"
+      },
+      {
         src: "/nuo-mark.svg",
         sizes: "any",
         type: "image/svg+xml",
-        purpose: "any"
+        purpose: "monochrome"
       }
     ]
   };
