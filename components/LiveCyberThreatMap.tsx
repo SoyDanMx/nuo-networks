@@ -16,8 +16,11 @@ const LiveCyberThreatMap = (): JSX.Element => {
   const contactHref = `${localizedHome(locale)}#contact` as Route;
 
   return (
-    <div className="relative flex min-h-[100dvh] min-w-0 flex-col bg-black text-foreground" aria-label={m.aria}>
-      <header className="relative z-30 flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] px-4 py-3 sm:px-6 lg:px-8">
+    <div
+      className="relative flex min-h-[100dvh] min-w-0 flex-col bg-[#020617] text-foreground [background:radial-gradient(ellipse_120%_80%_at_50%_-20%,hsl(215_45%_12%)_0%,hsl(225_50%_6%)_35%,#020617_70%)]"
+      aria-label={m.aria}
+    >
+      <header className="relative z-30 flex flex-wrap items-center justify-between gap-3 border-b border-sky-950/50 bg-[#050a14]/80 px-4 py-3 backdrop-blur-sm sm:px-6 lg:px-8">
         <Link href={homeHref} className="inline-flex shrink-0 items-center gap-2 opacity-90 transition-opacity hover:opacity-100">
           <Image
             src="/logos/nuo-logo-white.png"
@@ -36,9 +39,20 @@ const LiveCyberThreatMap = (): JSX.Element => {
         </a>
       </header>
 
-      <LiveThreatMapPanel density="page" className="min-h-0 flex-1" />
+      <section
+        className="relative z-20 border-b border-sky-950/40 px-4 py-5 sm:px-8 sm:py-6"
+        aria-labelledby="threat-map-heading"
+      >
+        <p className="font-mono text-[10px] font-medium uppercase tracking-[0.35em] text-sky-500/90">{m.kicker}</p>
+        <h1 id="threat-map-heading" className="mt-2 text-2xl font-light tracking-tight text-white sm:text-3xl md:text-4xl">
+          {m.title}
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">{m.mapSubtitle}</p>
+      </section>
 
-      <footer className="relative z-20 flex flex-col items-center gap-3 border-t border-white/[0.08] px-4 py-5 sm:flex-row sm:justify-between sm:px-8">
+      <LiveThreatMapPanel density="page" theme="imperva" className="min-h-0 flex-1" />
+
+      <footer className="relative z-20 flex flex-col items-center gap-3 border-t border-sky-950/40 px-4 py-5 sm:flex-row sm:justify-between sm:px-8">
         <p className="max-w-xl text-center font-mono text-[10px] leading-relaxed text-zinc-600 sm:text-left">{m.disclaimer}</p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a

@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { HeaderSosCta } from "@/components/HeaderSosCta";
 import SolutionsMegaMenu from "@/components/SolutionsMegaMenu";
 import { useI18n } from "@/lib/i18n/provider";
 import { localizedHash, localizedHome, localizedPath } from "@/lib/i18n/paths";
@@ -28,6 +29,7 @@ const Header = (): JSX.Element => {
   const brandsHref = localizedPath(locale, "/marcas") as Route;
   const eshopHref = localizedPath(locale, "/eshop") as Route;
   const threatMapHref = localizedPath(locale, "/threat-map") as Route;
+  const sosHref = localizedPath(locale, "/sos") as Route;
 
   useEffect(() => {
     if (mobileOpen) {
@@ -106,9 +108,15 @@ const Header = (): JSX.Element => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2 md:gap-3">
+          <HeaderSosCta
+            href={sosHref}
+            label={h.navSosCta}
+            ariaLabel={h.navSosAria}
+          />
+
           <div
-            className="flex items-center rounded-lg border border-border/80 bg-white/[0.04] p-0.5 backdrop-blur-sm"
+            className="flex shrink-0 items-center rounded-lg border border-border/80 bg-white/[0.04] p-0.5 backdrop-blur-sm"
             role="group"
             aria-label="Language"
           >
@@ -173,7 +181,17 @@ const Header = (): JSX.Element => {
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 320 }}
             >
-              <div className="flex items-center justify-between border-b border-border/60 px-5 py-4">
+              <div className="border-b border-border/60 px-3 pb-3 pt-4 sm:px-5">
+                <HeaderSosCta
+                  href={sosHref}
+                  variant="drawer-hero"
+                  label={h.navSosCta}
+                  ariaLabel={h.navSosAria}
+                  drawerSubline={h.navSosDrawerSub}
+                  onNavigate={() => setMobileOpen(false)}
+                />
+              </div>
+              <div className="flex items-center justify-between border-b border-border/60 px-5 py-3">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400">NUO</span>
                 <button
                   type="button"

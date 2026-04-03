@@ -11,12 +11,23 @@ export interface ThreatFeedArcLayerProps {
   gid: string;
   reduceMotion: boolean;
   index: number;
+  /** SVG gradient id (no `#`) when `arc.color` is absent, e.g. `${gid}-arc-imperva`. */
+  arcGradientId?: string;
+  /** SVG filter id for glow (no `#`). */
+  glowFilterId?: string;
 }
 
 /**
  * Un arco del feed con estilo alineado a Elastic (`color`, `weight`, `animate`, `pulseAtSource`).
  */
-export function ThreatFeedArcLayer({ arc, gid, reduceMotion, index }: ThreatFeedArcLayerProps): JSX.Element {
+export function ThreatFeedArcLayer({
+  arc,
+  gid,
+  reduceMotion,
+  index,
+  arcGradientId,
+  glowFilterId
+}: ThreatFeedArcLayerProps): JSX.Element {
   const d = arcPathFromSample(arc);
   const hex = normalizeHexColor(arc.color);
   const { halo, core } = strokeWidthsFromWeight(arc.weight);
@@ -26,7 +37,9 @@ export function ThreatFeedArcLayer({ arc, gid, reduceMotion, index }: ThreatFeed
   const pulsePt = pulseAtSource ? from : to;
   const pulseColor = hex ?? "#fafafa";
 
-  const strokeMain: string = hex ?? `url(#${gid}-arc-live)`;
+  const gradId = arcGradientId ?? `${gid}-arc-live`;
+  const glowId = glowFilterId ?? `${gid}-arc-glow`;
+  const strokeMain: string = hex ?? `url(#${gradId})`;
 
   const staticLayer = (
     <g opacity={0.9}>
@@ -44,7 +57,7 @@ export function ThreatFeedArcLayer({ arc, gid, reduceMotion, index }: ThreatFeed
         strokeWidth={core}
         strokeLinecap="round"
         opacity={0.92}
-        filter={hex ? `url(#${gid}-arc-glow)` : undefined}
+        filter={hex ? `url(#${glowId})` : undefined}
       />
     </g>
   );
@@ -71,7 +84,7 @@ export function ThreatFeedArcLayer({ arc, gid, reduceMotion, index }: ThreatFeed
         stroke={strokeMain}
         strokeWidth={core}
         strokeLinecap="round"
-        filter={`url(#${gid}-arc-glow)`}
+        filter={`url(#${glowId})`}
         initial={{ pathLength: 0, opacity: 0.4 }}
         animate={{ pathLength: 1, opacity: hex ? [0.75, 1, 0.85] : [0.55, 0.95, 0.6] }}
         transition={{

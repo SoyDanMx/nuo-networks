@@ -38,6 +38,23 @@ export const REGION_ACCENT: Record<string, string> = {
 
 const TOP_REGION_IDS = ["US", "DE", "UK", "IN", "BR", "SG", "JP"] as const;
 
+/** Tonos cálidos bajo focos regionales (estilo mapa tipo Imperva). */
+const IMPERVA_REGION_HEAT: Record<string, string> = {
+  US: "#fb923c",
+  DE: "#f97316",
+  UK: "#fdba74",
+  IN: "#ea580c",
+  BR: "#f59e0b",
+  SG: "#fbbf24",
+  JP: "#fdba74",
+  CN: "#ef4444",
+  MX: "#fb923c",
+  FR: "#f97316",
+  RU: "#94a3b8",
+  KR: "#fb7185",
+  AU: "#f97316"
+};
+
 const REGION_SHARE: Record<string, number> = {
   US: 0.35,
   DE: 0.12,
@@ -99,15 +116,24 @@ function useRegionRps(ids: readonly string[], reduced: boolean): Record<string, 
 export interface LiveThreatMapPanelProps {
   /** `page`: full dashboard column sizes; `embed`: hero / comparativa NUO. */
   density?: "page" | "embed";
+  /** `imperva`: océano azul, arcos naranja/rojo (página `/threat-map`). `embed` ignora y usa estilo NUO. */
+  theme?: "nuo" | "imperva";
   className?: string;
 }
 
-export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMapPanelProps): JSX.Element {
+export function LiveThreatMapPanel({
+  density = "page",
+  theme = "nuo",
+  className
+}: LiveThreatMapPanelProps): JSX.Element {
   const gid = useId().replace(/:/g, "");
   const { locale, messages } = useI18n();
   const m = messages.liveThreatMap;
   const reduceMotion = useReducedMotion();
   const embed = density === "embed";
+  const isImpervaTheme = !embed && theme === "imperva";
+  const arcGrad = `${gid}-arc-${isImpervaTheme ? "imperva" : "live"}`;
+  const glowFilter = `${gid}-arc-glow${isImpervaTheme ? "-imperva" : ""}`;
   const { data: feed, error: feedError } = useThreatSummary();
 
   const regionIds = useMemo(
@@ -193,6 +219,8 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
       className={cn(
         "flex min-h-0 flex-1 flex-col bg-black md:flex-row",
         embed ? "min-h-[280px] md:min-h-[300px]" : "lg:min-h-[calc(100dvh-3.5rem)]",
+        isImpervaTheme &&
+          "bg-[linear-gradient(165deg,hsl(215_45%_8%)_0%,hsl(225_55%_4%)_45%,hsl(220_40%_3%)_100%)]",
         className
       )}
     >
@@ -201,10 +229,17 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
           "flex shrink-0 flex-col border-white/[0.08] font-mono",
           embed
             ? "w-full border-b px-3 py-4 md:w-[min(44%,240px)] md:border-b-0 md:border-r md:px-3 md:py-4 lg:w-[min(42%,280px)]"
-            : "w-full border-b px-4 py-6 sm:px-6 lg:w-[min(100%,420px)] lg:border-b-0 lg:border-r lg:py-8 lg:pl-8 lg:pr-6"
+            : "w-full border-b px-4 py-6 sm:px-6 lg:w-[min(100%,420px)] lg:border-b-0 lg:border-r lg:py-8 lg:pl-8 lg:pr-6",
+          isImpervaTheme && "border-sky-900/35 bg-[#070d18]/90 backdrop-blur-sm"
         )}
       >
-        <p className={cn("uppercase tracking-[0.2em] text-zinc-500", embed ? "text-[8px]" : "text-[10px]")}>
+        <p
+          className={cn(
+            "uppercase tracking-[0.2em] text-zinc-500",
+            embed ? "text-[8px]" : "text-[10px]",
+            isImpervaTheme && "text-sky-500/90"
+          )}
+        >
           {m.periodLabel}
         </p>
         <p className={cn("tracking-wide text-zinc-600", embed ? "mt-0.5 text-[9px]" : "mt-1 text-[11px]")}>
@@ -292,15 +327,18 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
       <div
         className={cn(
           "relative flex min-h-0 flex-1 flex-col bg-black",
-          embed ? "min-h-[200px] md:min-h-0" : "min-h-[min(68vh,560px)]"
+          embed ? "min-h-[200px] md:min-h-0" : "min-h-[min(68vh,560px)]",
+          isImpervaTheme && "bg-[linear-gradient(180deg,hsl(220_42%_7%)_0%,hsl(225_48%_4%)_55%,#020617_100%)]"
         )}
       >
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          className="pointer-events-none absolute inset-0"
           aria-hidden
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+            opacity: isImpervaTheme ? 0.045 : 0.04,
+            backgroundImage: isImpervaTheme
+              ? "linear-gradient(rgba(56,189,248,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.16) 1px, transparent 1px)"
+              : "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
             backgroundSize: embed ? "18px 18px" : "24px 24px"
           }}
         />
@@ -309,8 +347,12 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
           <div className="relative mx-auto w-full max-w-[1100px] flex-1">
             <div
               className={cn(
-                "relative w-full overflow-hidden rounded-lg border border-white/[0.07] bg-black",
-                embed ? "min-h-[180px] max-h-[min(42vh,280px)]" : "min-h-[280px]"
+                "relative w-full overflow-hidden bg-black",
+                embed
+                  ? "min-h-[180px] max-h-[min(42vh,280px)] rounded-lg border border-white/[0.07]"
+                  : isImpervaTheme
+                    ? "min-h-[280px] rounded-xl border border-sky-500/20 bg-[#040d18] shadow-[inset_0_0_100px_rgba(14,165,233,0.07),0_0_0_1px_rgba(56,189,248,0.06)]"
+                    : "min-h-[280px] rounded-lg border border-white/[0.07]"
               )}
             >
               <svg
@@ -321,20 +363,47 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                 aria-hidden
               >
                 <defs>
-                  <linearGradient id={`${gid}-arc-live`} x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#fb923c" stopOpacity={0.55} />
-                    <stop offset="50%" stopColor="#f97316" stopOpacity={0.9} />
-                    <stop offset="100%" stopColor="#fde047" stopOpacity={0.75} />
-                  </linearGradient>
-                  <filter id={`${gid}-arc-glow`} x="-100%" y="-100%" width="300%" height="300%">
-                    <feGaussianBlur stdDeviation="4" result="b" />
-                    <feMerge>
-                      <feMergeNode in="b" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
+                  {isImpervaTheme ? (
+                    <>
+                      <linearGradient id={`${gid}-arc-imperva`} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#ff5f1f" stopOpacity={0.85} />
+                        <stop offset="45%" stopColor="#ff8c42" stopOpacity={0.95} />
+                        <stop offset="100%" stopColor="#ffc14d" stopOpacity={0.8} />
+                      </linearGradient>
+                      <filter id={`${gid}-arc-glow-imperva`} x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur stdDeviation="5.5" result="b" />
+                        <feColorMatrix
+                          in="b"
+                          type="matrix"
+                          values="1 0 0 0 0  0 0.55 0 0 0  0 0 0.15 0 0  0 0 0 0.9 0"
+                          result="tint"
+                        />
+                        <feMerge>
+                          <feMergeNode in="tint" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </>
+                  ) : (
+                    <>
+                      <linearGradient id={`${gid}-arc-live`} x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#fb923c" stopOpacity={0.55} />
+                        <stop offset="50%" stopColor="#f97316" stopOpacity={0.9} />
+                        <stop offset="100%" stopColor="#fde047" stopOpacity={0.75} />
+                      </linearGradient>
+                      <filter id={`${gid}-arc-glow`} x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur stdDeviation="4" result="b" />
+                        <feMerge>
+                          <feMergeNode in="b" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </>
+                  )}
                   {THREAT_NODES.map((n) => {
-                    const c = REGION_ACCENT[n.id] ?? "#64748b";
+                    const c = isImpervaTheme
+                      ? (IMPERVA_REGION_HEAT[n.id] ?? "#fb923c")
+                      : (REGION_ACCENT[n.id] ?? "#64748b");
                     return (
                       <radialGradient
                         key={`g-${n.id}`}
@@ -344,15 +413,15 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                         r={140}
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0%" stopColor={c} stopOpacity={0.42} />
-                        <stop offset="55%" stopColor={c} stopOpacity={0.12} />
+                        <stop offset="0%" stopColor={c} stopOpacity={isImpervaTheme ? 0.38 : 0.42} />
+                        <stop offset="55%" stopColor={c} stopOpacity={isImpervaTheme ? 0.1 : 0.12} />
                         <stop offset="100%" stopColor={c} stopOpacity={0} />
                       </radialGradient>
                     );
                   })}
                 </defs>
 
-                <ThreatMapGlobeLayer gid={gid} variant="live" />
+                <ThreatMapGlobeLayer gid={gid} variant={isImpervaTheme ? "imperva" : "live"} />
 
                 {THREAT_NODES.map((n) => (
                   <circle key={`heat-${n.id}`} cx={n.x} cy={n.y} r={140} fill={`url(#${gid}-heat-${n.id})`} />
@@ -366,6 +435,8 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                         gid={gid}
                         reduceMotion={Boolean(reduceMotion)}
                         index={idx}
+                        arcGradientId={arcGrad}
+                        glowFilterId={glowFilter}
                       />
                     ))
                   : activeSimRoutes.map((route, idx) => {
@@ -384,7 +455,7 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                           <path
                             d={d}
                             fill="none"
-                            stroke={`url(#${gid}-arc-live)`}
+                            stroke={`url(#${arcGrad})`}
                             strokeWidth={1.8}
                             strokeLinecap="round"
                             opacity={0.85}
@@ -405,10 +476,10 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                           <motion.path
                             d={d}
                             fill="none"
-                            stroke={`url(#${gid}-arc-live)`}
+                            stroke={`url(#${arcGrad})`}
                             strokeWidth={1.75}
                             strokeLinecap="round"
-                            filter={`url(#${gid}-arc-glow)`}
+                            filter={`url(#${glowFilter})`}
                             initial={{ pathLength: 0, opacity: 0.4 }}
                             animate={{ pathLength: 1, opacity: [0.55, 0.95, 0.6] }}
                             transition={{
@@ -421,7 +492,9 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                     })}
 
                 {THREAT_NODES.map((n, ni) => {
-                  const accent = REGION_ACCENT[n.id] ?? "#fff";
+                  const accent = isImpervaTheme
+                    ? (IMPERVA_REGION_HEAT[n.id] ?? "#fb923c")
+                    : (REGION_ACCENT[n.id] ?? "#fff");
                   return (
                     <g key={n.id}>
                       {!reduceMotion ? (
@@ -429,9 +502,9 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                           cx={n.x}
                           cy={n.y}
                           fill="none"
-                          stroke={accent}
+                          stroke={isImpervaTheme ? "#fb923c" : accent}
                           strokeWidth={1}
-                          strokeOpacity={0.35}
+                          strokeOpacity={isImpervaTheme ? 0.45 : 0.35}
                           initial={{ r: 4, opacity: 0.5 }}
                           animate={{ r: 28, opacity: 0 }}
                           transition={{
@@ -444,8 +517,8 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
                       ) : null}
                       <polygon
                         points={`${n.x},${n.y - 6} ${n.x - 5},${n.y + 5} ${n.x + 5},${n.y + 5}`}
-                        fill="#fafafa"
-                        opacity={0.92}
+                        fill={isImpervaTheme ? "#fffbeb" : "#fafafa"}
+                        opacity={0.94}
                       />
                     </g>
                   );
@@ -456,11 +529,25 @@ export function LiveThreatMapPanel({ density = "page", className }: LiveThreatMa
             <div
               className={cn(
                 "mt-2 flex flex-wrap items-center gap-2 font-mono text-zinc-600",
-                embed ? "text-[8px]" : "mt-4 gap-3 text-[10px]"
+                embed ? "text-[8px]" : "mt-4 gap-3 text-[10px]",
+                isImpervaTheme && "text-sky-700/90"
               )}
             >
-              <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-zinc-400">
-                <Radio className="h-2.5 w-2.5 text-emerald-500 motion-safe:animate-pulse" aria-hidden />
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full border px-2 py-0.5",
+                  isImpervaTheme
+                    ? "border-orange-500/35 bg-orange-950/40 text-orange-100/90"
+                    : "border-white/10 bg-white/[0.04] text-zinc-400"
+                )}
+              >
+                <Radio
+                  className={cn(
+                    "h-2.5 w-2.5 motion-safe:animate-pulse",
+                    isImpervaTheme ? "text-orange-400" : "text-emerald-500"
+                  )}
+                  aria-hidden
+                />
                 {m.live}
               </span>
               <span className="tracking-wide">{m.brandCloud}</span>

@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/eshop`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/en/eshop`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/threat-map`, lastModified: now, changeFrequency: "weekly", priority: 0.75 },
-    { url: `${SITE_URL}/en/threat-map`, lastModified: now, changeFrequency: "weekly", priority: 0.75 }
+    { url: `${SITE_URL}/en/threat-map`, lastModified: now, changeFrequency: "weekly", priority: 0.75 },
+    { url: `${SITE_URL}/sos`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE_URL}/en/sos`, lastModified: now, changeFrequency: "monthly", priority: 0.85 }
   ];
 }
