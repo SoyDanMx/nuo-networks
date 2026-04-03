@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 
+import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 interface ProvidersProps {
@@ -9,5 +10,9 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps): JSX.Element {
-  return <TooltipProvider>{children}</TooltipProvider>;
+  return (
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+      <TooltipProvider>{children}</TooltipProvider>
+    </ThemeProvider>
+  );
 }

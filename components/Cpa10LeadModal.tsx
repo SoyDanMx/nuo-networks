@@ -228,7 +228,7 @@ const Cpa10LeadModal = ({ open, onOpenChange }: Cpa10LeadModalProps): JSX.Elemen
                 ) : null}
               </div>
 
-              <Button type="submit" variant="cyber-solid" size="lg" className="w-full py-6 text-base">
+              <Button type="submit" variant="cyber-solid" size="nuo-lg" className="w-full py-6 text-base">
                 {m.submit}
               </Button>
               <p className="text-center text-[11px] leading-relaxed text-muted-foreground">{m.disclaimer}</p>

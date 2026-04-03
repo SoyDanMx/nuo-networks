@@ -98,7 +98,7 @@ const CompetitorStyleThreatMap = (): JSX.Element => {
 
   return (
     <div
-      className="relative w-full overflow-hidden rounded-2xl border border-red-600/30 bg-[#0a0c10] shadow-[0_0_80px_-20px_hsl(0_84%_50%/0.25),inset_0_1px_0_0_rgba(255,80,60,0.12)] backdrop-blur-xl"
+      className="relative w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-red-600/30 bg-[#0a0c10] shadow-[0_0_80px_-20px_hsl(0_84%_50%/0.25),inset_0_1px_0_0_rgba(255,80,60,0.12)] backdrop-blur-xl"
       aria-label={f.aria}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden>
@@ -204,9 +204,9 @@ const CompetitorStyleThreatMap = (): JSX.Element => {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-stretch">
+        <div className="flex min-w-0 flex-col gap-3 lg:flex-row lg:items-stretch">
           <div
-            className={`relative min-h-[200px] flex-1 overflow-hidden rounded-lg border border-red-950/40 bg-black/30 md:min-h-[240px] ${view3d ? "motion-safe:perspective-[900px]" : ""}`}
+            className={`relative min-h-[200px] min-w-0 flex-1 overflow-hidden rounded-lg border border-red-950/40 bg-black/30 md:min-h-[240px] ${view3d ? "motion-safe:perspective-[900px]" : ""}`}
           >
             <motion.div
               className="relative aspect-[1000/480] w-full max-h-[min(48vh,300px)] min-h-[200px] md:max-h-[320px]"
@@ -334,7 +334,7 @@ const CompetitorStyleThreatMap = (): JSX.Element => {
             </motion.div>
           </div>
 
-          <aside className="flex w-full shrink-0 flex-col rounded-lg border border-red-900/35 bg-gradient-to-b from-red-950/30 to-black/40 p-3 lg:w-44">
+          <aside className="flex w-full min-w-0 shrink-0 flex-col rounded-lg border border-red-900/35 bg-gradient-to-b from-red-950/30 to-black/40 p-3 lg:w-44">
             <p className="mb-2 font-mono text-[8px] font-semibold uppercase tracking-[0.14em] text-orange-400/90">{f.topThreatsTitle}</p>
             <ul className="space-y-2">
               {f.topThreats.map((t) => (
@@ -351,8 +351,8 @@ const CompetitorStyleThreatMap = (): JSX.Element => {
           <p className="border-b border-red-950/50 bg-red-950/20 px-2 py-1.5 font-mono text-[8px] uppercase tracking-wider text-muted-foreground">
             {f.tableTitle}
           </p>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[320px] text-left font-mono text-[9px] md:text-[10px]">
+          <div className="min-w-0 overflow-x-auto">
+            <table className="w-full min-w-[min(100%,320px)] text-left font-mono text-[9px] md:text-[10px]">
               <thead>
                 <tr className="text-muted-foreground">
                   <th className="px-2 py-1.5 font-medium">{f.columns.threat}</th>

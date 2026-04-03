@@ -1,6 +1,6 @@
 import { WORLD_LAND_PATHS } from "@/lib/threat-map-world-v2";
 
-export type ThreatGlobeVariant = "nuo" | "warm";
+export type ThreatGlobeVariant = "nuo" | "warm" | "live";
 
 interface ThreatMapGlobeLayerProps {
   /** Unique prefix for SVG defs (useId). */
@@ -11,16 +11,18 @@ interface ThreatMapGlobeLayerProps {
 /**
  * Océano con gradiente, paralelos estilo globo digital, borde elíptico y masas continentales de alto contraste.
  * Inspiración visual: mapas de amenazas “tipo mercado” (oscuro, arcos sobre geografía legible).
+ * Variante `live`: estilo “threat map” tipo matriz de puntos sobre fondo casi negro.
  */
 export function ThreatMapGlobeLayer({ gid, variant }: ThreatMapGlobeLayerProps): JSX.Element {
   const warm = variant === "warm";
-  const oceanMid = warm ? "hsl(222 45% 9%)" : "hsl(200 55% 10%)";
-  const oceanEdge = warm ? "hsl(0 35% 5%)" : "hsl(222 60% 3%)";
-  const rim = warm ? "hsl(15 70% 42% / 0.22)" : "hsl(187 86% 48% / 0.2)";
-  const latStroke = warm ? "hsl(0 60% 35% / 0.14)" : "hsl(187 70% 45% / 0.11)";
-  const landFill = warm ? "hsl(220 28% 14%)" : "hsl(205 32% 14%)";
-  const landStroke = warm ? "hsl(15 65% 42% / 0.55)" : "hsl(187 75% 48% / 0.5)";
-  const landStrokeHi = warm ? "hsl(25 90% 55% / 0.18)" : "hsl(165 70% 55% / 0.15)";
+  const live = variant === "live";
+  const oceanMid = live ? "hsl(0 0% 4%)" : warm ? "hsl(222 45% 9%)" : "hsl(200 55% 10%)";
+  const oceanEdge = live ? "hsl(0 0% 2%)" : warm ? "hsl(0 35% 5%)" : "hsl(222 60% 3%)";
+  const rim = live ? "hsl(0 0% 22% / 0.35)" : warm ? "hsl(15 70% 42% / 0.22)" : "hsl(187 86% 48% / 0.2)";
+  const latStroke = live ? "hsl(0 0% 24% / 0.2)" : warm ? "hsl(0 60% 35% / 0.14)" : "hsl(187 70% 45% / 0.11)";
+  const landFill = live ? `url(#${gid}-live-dot-matrix)` : warm ? "hsl(220 28% 14%)" : "hsl(205 32% 14%)";
+  const landStroke = live ? "hsl(0 0% 28% / 0.65)" : warm ? "hsl(15 65% 42% / 0.55)" : "hsl(187 75% 48% / 0.5)";
+  const landStrokeHi = live ? "hsl(0 0% 40% / 0.25)" : warm ? "hsl(25 90% 55% / 0.18)" : "hsl(165 70% 55% / 0.15)";
 
   const latYs = [68, 118, 178, 248, 318, 388];
 
@@ -30,10 +32,20 @@ export function ThreatMapGlobeLayer({ gid, variant }: ThreatMapGlobeLayerProps):
         <radialGradient id={`${gid}-ocean`} cx="50%" cy="42%" r="72%">
           <stop offset="0%" stopColor={oceanMid} />
           <stop offset="55%" stopColor={oceanEdge} />
-          <stop offset="100%" stopColor={warm ? "hsl(0 40% 3%)" : "hsl(225 65% 2%)"} />
+          <stop offset="100%" stopColor={live ? "hsl(0 0% 1%)" : warm ? "hsl(0 40% 3%)" : "hsl(225 65% 2%)"} />
         </radialGradient>
+        {live ? (
+          <pattern
+            id={`${gid}-live-dot-matrix`}
+            width={5}
+            height={5}
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx={2.5} cy={2.5} r={0.85} fill="hsl(0 0% 28%)" />
+          </pattern>
+        ) : null}
         <filter id={`${gid}-land-glow`} x="-8%" y="-8%" width="116%" height="116%">
-          <feGaussianBlur stdDeviation="1.2" result="blur" />
+          <feGaussianBlur stdDeviation={live ? 0.8 : 1.2} result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />

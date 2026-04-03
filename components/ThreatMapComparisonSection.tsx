@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import CompetitorStyleThreatMap from "@/components/CompetitorStyleThreatMap";
-import HeroThreatMap from "@/components/HeroThreatMap";
+import HeroLiveThreatMap from "@/components/HeroLiveThreatMap";
 import { useI18n } from "@/lib/i18n/provider";
 
 const ThreatMapComparisonSection = (): JSX.Element => {
@@ -41,8 +41,9 @@ const ThreatMapComparisonSection = (): JSX.Element => {
           <p className="text-base leading-relaxed text-muted-foreground md:text-lg">{c.subtitle}</p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
+        <div className="grid min-w-0 gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
           <motion.div
+            className="min-w-0"
             initial={reduceMotion ? false : { opacity: 0, x: -28 }}
             whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
@@ -53,13 +54,14 @@ const ThreatMapComparisonSection = (): JSX.Element => {
           </motion.div>
 
           <motion.div
+            className="min-w-0"
             initial={reduceMotion ? false : { opacity: 0, x: 28 }}
             whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ type: "spring", stiffness: 280, damping: 26, delay: 0.06 }}
           >
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-400/90">{c.nuo.cardLabel}</p>
-            <HeroThreatMap />
+            <HeroLiveThreatMap />
           </motion.div>
         </div>
 

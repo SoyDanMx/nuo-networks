@@ -1,15 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import type { SimpleIcon } from "simple-icons";
 
-import {
-  PARTNER_LOGO_DOMAIN_BY_ID,
-  logoUrlClearbit,
-  logoUrlGoogleFavicon
-} from "@/lib/partner-logo-domains";
-
-type LogoStage = 0 | 1 | "wordmark";
+import { getPartnerSimpleIcon } from "@/lib/partner-simple-icons";
 
 interface PartnerBrandLogoProps {
   brandId: string;
@@ -47,56 +40,40 @@ function WordmarkTile({ label, compact }: { label: string; compact: boolean }): 
   );
 }
 
-/**
- * Intenta logo Clearbit → favicon Google → wordmark tipográfico.
- * Los logos remotos dependen de terceros; el wordmark asegura siempre una lectura clara.
- */
-export function PartnerBrandLogo({ brandId, label, variant = "marquee" }: PartnerBrandLogoProps): JSX.Element {
-  const domain = PARTNER_LOGO_DOMAIN_BY_ID[brandId];
-  const [stage, setStage] = useState<LogoStage>(domain ? 0 : "wordmark");
-
-  useEffect(() => {
-    setStage(domain ? 0 : "wordmark");
-  }, [brandId, domain]);
-
-  const urls = useMemo(() => {
-    if (!domain) return [];
-    return [logoUrlClearbit(domain), logoUrlGoogleFavicon(domain)];
-  }, [domain]);
-
-  const onError = useCallback(() => {
-    setStage((s) => {
-      if (s === 0) return 1;
-      if (s === 1) return "wordmark";
-      return "wordmark";
-    });
-  }, []);
-
-  const compact = variant === "marquee";
-
-  if (stage === "wordmark" || urls.length === 0) {
-    return <WordmarkTile label={label} compact={compact} />;
-  }
-
-  const src = stage === 0 ? urls[0] : urls[1];
-  const width = compact ? 200 : 240;
-  const height = compact ? 48 : 56;
-
+function SimpleIconTile({ icon, label, compact }: { icon: SimpleIcon; label: string; compact: boolean }): JSX.Element {
   return (
     <div
       className={`relative flex shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] ${
         compact ? "h-12 w-[200px]" : "h-16 w-full max-w-[260px]"
       }`}
     >
-      <Image
-        src={src}
-        alt={label}
-        width={width - 24}
-        height={height - 16}
-        className="max-h-[36px] w-auto max-w-[calc(100%-1.5rem)] object-contain opacity-90 md:max-h-[40px]"
-        unoptimized
-        onError={onError}
-      />
+      <svg
+        viewBox="0 0 24 24"
+        role="img"
+        aria-label={label}
+        className={
+          compact
+            ? "h-[34px] w-auto max-w-[min(168px,calc(100%-1.5rem))]"
+            : "h-10 w-auto max-w-[min(220px,calc(100%-1.5rem))]"
+        }
+      >
+        <title>{label}</title>
+        <path fill={`#${icon.hex}`} d={icon.path} />
+      </svg>
     </div>
   );
+}
+
+/**
+ * Logotipos vectoriales embebidos (Simple Icons) cuando existen; si no, wordmark tipográfico estable.
+ */
+export function PartnerBrandLogo({ brandId, label, variant = "marquee" }: PartnerBrandLogoProps): JSX.Element {
+  const compact = variant === "marquee";
+  const icon = getPartnerSimpleIcon(brandId);
+
+  if (icon) {
+    return <SimpleIconTile icon={icon} label={label} compact={compact} />;
+  }
+
+  return <WordmarkTile label={label} compact={compact} />;
 }

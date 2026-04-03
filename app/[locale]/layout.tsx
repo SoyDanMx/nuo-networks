@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
+/**
+ * Locale shell: i18n messages, CPA-10 lead modal, JSON-LD.
+ * Page titles/descriptions are home-specific; keywords include industrial cybersecurity & integrator terms.
+ */
 import { Cpa10LeadModalProvider } from "@/components/Cpa10LeadModalProvider";
 import { GlobalStructuredDataJsonLd } from "@/components/seo/GlobalStructuredDataJsonLd";
 import { getHomeKeywords } from "@/lib/seo/keywords";

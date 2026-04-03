@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { Shield, ArrowRight, Search } from "lucide-react";
 
 import HeroNeuralField from "@/components/HeroNeuralField";
-import HeroThreatMap from "@/components/HeroThreatMap";
+import HeroLiveThreatMap from "@/components/HeroLiveThreatMap";
+import HeroNetworkOrb from "@/components/HeroNetworkOrb";
 import { Button } from "@/components/ui/button";
 import { useCpa10LeadModal } from "@/components/Cpa10LeadModalProvider";
 import { useI18n } from "@/lib/i18n/provider";
@@ -19,12 +20,19 @@ const HeroSection = (): JSX.Element => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[calc(100dvh-5rem)] flex-col items-center overflow-hidden bg-[#020617] pt-24 pb-16 md:min-h-[calc(100dvh-4.5rem)] md:pt-28 md:pb-20"
+      className="relative flex min-h-[calc(100dvh-5rem)] w-full min-w-0 flex-col items-stretch overflow-x-clip overflow-y-visible bg-[#020617] pt-24 pb-16 md:min-h-[calc(100dvh-4.5rem)] md:pt-28 md:pb-20"
       aria-label={hero.aria}
     >
       <HeroNeuralField>
         <div className="absolute left-1/2 top-1/2 h-[min(90vw,52rem)] w-[min(90vw,52rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/[0.06] blur-[100px]" />
       </HeroNeuralField>
+
+      {/* Premium “hub” — cyan/magenta depth; sits behind SOC card on large screens */}
+      <div className="pointer-events-none absolute inset-0 z-[2] hidden overflow-visible lg:block" aria-hidden>
+        <div className="absolute right-[-6%] top-[18%] w-[min(420px,38vw)] max-w-none xl:right-0 xl:top-[20%] xl:w-[min(480px,34vw)]">
+          <HeroNetworkOrb />
+        </div>
+      </div>
 
       <motion.div
         className="pointer-events-none absolute inset-x-0 z-[1] h-px bg-gradient-to-r from-transparent via-cyan-400/35 to-transparent"
@@ -33,9 +41,9 @@ const HeroSection = (): JSX.Element => {
       />
 
       <div className="container relative z-10 w-full min-w-0 max-w-full px-4 pb-8 pt-4 sm:px-6 md:pb-12">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
+        <div className="mx-auto grid min-w-0 max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
           <motion.div
-            className="mx-auto max-w-4xl text-center lg:mx-0 lg:max-w-none lg:text-left"
+            className="mx-auto min-w-0 max-w-4xl text-center lg:mx-0 lg:max-w-none lg:text-left"
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
@@ -50,7 +58,7 @@ const HeroSection = (): JSX.Element => {
               <span className="font-mono text-xs text-cyan-400 md:text-sm">{hero.badge}</span>
             </motion.div>
 
-            <h1 className="mb-6 break-words font-heading text-3xl font-bold leading-[1.08] tracking-tight text-foreground min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 min-w-0 break-words [overflow-wrap:anywhere] font-heading text-3xl font-bold leading-[1.08] tracking-tight text-foreground min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="block text-foreground">{hero.titleLine1}</span>
               <span className="mt-1 block">
                 <span className="glow-text bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
@@ -115,7 +123,7 @@ const HeroSection = (): JSX.Element => {
               <Button
                 type="button"
                 variant="cyber"
-                size="lg"
+                size="nuo-lg"
                 className="w-full min-w-0 px-4 py-4 text-sm min-[400px]:w-auto min-[400px]:px-8 min-[400px]:py-6 min-[400px]:text-base"
                 onClick={openCpa10Modal}
               >
@@ -146,12 +154,12 @@ const HeroSection = (): JSX.Element => {
           </motion.div>
 
           <motion.div
-            className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
+            className="relative z-[5] mx-auto w-full min-w-0 max-w-lg lg:mx-0 lg:max-w-none"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
-            <HeroThreatMap />
+            <HeroLiveThreatMap />
           </motion.div>
         </div>
       </div>

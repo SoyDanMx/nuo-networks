@@ -3,11 +3,10 @@ const nextConfig = {
   experimental: {
     typedRoutes: true
   },
+  /** Framer Motion v12 (motion-dom) + webpack: avoid missing vendor-chunks in server bundles. */
+  transpilePackages: ["framer-motion"],
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "logo.clearbit.com", pathname: "/**" },
-      { protocol: "https", hostname: "www.google.com", pathname: "/s2/favicons/**" }
-    ]
+    remotePatterns: []
   }
 };
 

@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: IndexPageProps): Promise<Meta
 
 const Index = (): JSX.Element => {
   return (
-    <main className="relative min-h-screen min-w-0 max-w-[100vw] overflow-x-clip bg-background">
+    <main className="relative min-h-screen w-full min-w-0 max-w-full overflow-x-clip bg-background">
       <LandingNetworkBackdrop />
       <Header />
       <div className="relative z-10">

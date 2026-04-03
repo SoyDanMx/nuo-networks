@@ -27,6 +27,7 @@ const Header = (): JSX.Element => {
   const homeHref = localizedHome(locale);
   const brandsHref = localizedPath(locale, "/marcas") as Route;
   const eshopHref = localizedPath(locale, "/eshop") as Route;
+  const threatMapHref = localizedPath(locale, "/threat-map") as Route;
 
   useEffect(() => {
     if (mobileOpen) {
@@ -87,6 +88,12 @@ const Header = (): JSX.Element => {
             className="text-sm text-muted-foreground transition-colors hover:text-cyan-400"
           >
             {h.navEshop}
+          </Link>
+          <Link
+            href={threatMapHref}
+            className="text-sm text-muted-foreground transition-colors hover:text-cyan-400"
+          >
+            {h.navThreatMap}
           </Link>
           {nav.slice(1).map((item) => (
             <a
@@ -205,6 +212,15 @@ const Header = (): JSX.Element => {
                     onClick={() => setMobileOpen(false)}
                   >
                     {h.navEshop}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={threatMapHref}
+                    className="block rounded-xl border border-transparent px-4 py-3.5 font-medium text-foreground transition-colors hover:border-cyan-500/25 hover:bg-cyan-500/5 hover:text-cyan-400"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {h.navThreatMap}
                   </Link>
                 </li>
                 <li>

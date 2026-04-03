@@ -5,6 +5,7 @@
 @layer base {
   html {
     overflow-x: hidden;
+    max-width: 100%;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -39,12 +40,15 @@
     --ring: 187 86% 53%;
 
     --radius: 0.5rem;
+    /** Unidad base alineada a la escala de spacing de Tailwind (shadcn / grid de Alert). */
+    --spacing: 0.25rem;
 
     --cyber-glow: 187 86% 53%;
     --cyber-blue: 292 84% 61%;
     --cyber-surface: 220 50% 7%;
     --cyber-grid: 220 40% 10%;
 
+    /* Body / UI: Inter (technical). Headings: Space Grotesk via h1–h6 & .font-heading */
     --font-display: var(--font-inter), system-ui, sans-serif;
     --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
@@ -61,8 +65,7 @@
   }
 
   body {
-    @apply bg-[#020617] text-foreground antialiased;
-    font-family: var(--font-display);
+    @apply min-w-0 max-w-full overflow-x-hidden bg-nuo-base font-sans text-foreground antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {

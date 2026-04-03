@@ -14,7 +14,45 @@
     "navSolutions": "Soluciones",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú",
-    "menuNavAria": "Navegación móvil"
+    "menuNavAria": "Navegación móvil",
+    "navThreatMap": "Mapa en vivo"
+  },
+  "liveThreatMap": {
+    "metaTitle": "Mapa de amenazas en vivo · NUO Networks",
+    "metaDescription": "Visualización de telemetría simulada de amenazas cibernéticas en tiempo real: arcos entre regiones, nodos activos y contador ilustrativo. Demostración visual para contexto SOC.",
+    "aria": "Mapa de amenazas cibernéticas en vivo (demostración visual)",
+    "kicker": "Telemetría simulada",
+    "title": "Mapa de amenazas en vivo",
+    "counterLabel": "Eventos ilustrados hoy",
+    "cta": "No esperes al ataque: la prevención empieza ahora",
+    "ctaShort": "Prevención ahora",
+    "brandCloud": "NUO Threat Intelligence",
+    "disclaimer": "Datos ilustrativos para contexto visual; no representan incidentes reales ni feeds comerciales.",
+    "live": "En vivo",
+    "scrollHint": "Contacto",
+    "periodLabel": "Ventana en vivo",
+    "periodRange": "[ telemetría simulada · UTC ]",
+    "totalLabel": "Señales totales",
+    "aggregateRate": "agregado /s",
+    "topRegionsTitle": "Regiones con más actividad",
+    "nodesFooter": "▲ 13 nodos NUO",
+    "feedError": "No se pudo sincronizar /api/threat-summary; simulación local activa.",
+    "feedSourcesPrefix": "Fuentes",
+    "nodeLabels": {
+      "US": "Estados Unidos",
+      "MX": "México",
+      "BR": "Brasil",
+      "UK": "Reino Unido",
+      "DE": "Alemania",
+      "FR": "Francia",
+      "RU": "Rusia",
+      "CN": "China",
+      "JP": "Japón",
+      "KR": "Corea del Sur",
+      "IN": "India",
+      "SG": "Singapur",
+      "AU": "Australia"
+    }
   },
   "solutionsMenu": {
     "panelAria": "Catálogo de soluciones NUO",
@@ -121,6 +159,7 @@
       { "value": "156", "label": "Playbooks de respuesta" }
     ],
     "disclaimer": "Visualizacion demostrativa. Sin datos reales de clientes ni de terceros. Estetica tipo mapa SOC de referencia; solo demostracion NUO.",
+    "embedFullMap": "Mapa en vivo completo",
     "feed": [
       "[ALERTA] Movimiento lateral · MX → US · segmento OT",
       "[IOC] Beacon DNS tunelado · CN → JP",
@@ -142,7 +181,7 @@
   "threatMapCompare": {
     "kicker": "Referencia visual",
     "title": "Mapa de amenazas: estilo competidor vs. NUO",
-    "subtitle": "Comparación lado a lado entre un panel inspirado en mapas públicos típicos de competidores (arcos cálidos, tabla IPS, top exploits) y el mapa demostrativo NUO (cian, telemetría OT y leyenda tipo SOC). Ambos usan datos simulados.",
+    "subtitle": "Comparación lado a lado: panel inspirado en mapas públicos típicos de competidores (arcos cálidos, tabla IPS, top exploits) frente al mapa NUO en vivo (métricas agregadas, regiones y nodos estilo dashboard). Ambos usan datos simulados.",
     "sectionDisclaimer": "El panel izquierdo imita la estética de productos de terceros solo con fines comparativos en esta demostración; no implica afiliación, respaldo ni datos reales de ningún fabricante.",
     "competitorStyle": {
       "cardLabel": "Referencia · mapa estilo mercado (simulado)",
@@ -233,11 +272,13 @@
   },
   "trustTicker": {
     "kicker": "Partner strip · referencias técnicas (escala de grises)",
-    "aria": "Cinta de confianza: Fortinet, Cisco, Ubiquiti, EPCOM, Hikvision, Milestone",
-    "note": "Logos vía resolutores públicos; escala de grises con resplandor cyan al hover.",
+    "aria": "Cinta de confianza: Fortinet, Cisco, Huawei, Grandstream, Ubiquiti, EPCOM, Hikvision, Milestone",
+    "note": "Marcas vectoriales (Simple Icons) cuando existen; si no, mosaico tipográfico. Escala de grises con resplandor cyan al hover.",
     "brands": [
       { "id": "fortinet", "label": "Fortinet" },
       { "id": "cisco", "label": "Cisco" },
+      { "id": "huawei", "label": "Huawei" },
+      { "id": "grandstream", "label": "Grandstream" },
       { "id": "ubiquiti", "label": "Ubiquiti" },
       { "id": "epcom-professional", "label": "EPCOM" },
       { "id": "hikvision", "label": "Hikvision" },
@@ -247,11 +288,12 @@
   "partners": {
     "aria": "Aliados tecnológicos y fabricantes",
     "kicker": "Ecosistema de fabricantes y plataformas",
-    "note": "Referencias de marcas según el catálogo público EPCOM (epcom.net/principal/brands). Los logos se resuelven vía servicios de terceros (p. ej. Clearbit / favicon) y pueden variar o mostrarse como texto si no hay imagen; no sustituyen logotipos oficiales aprobados. NUO no implica afiliación ni respaldo de cada fabricante.",
+    "note": "Referencias de marcas según el catálogo público EPCOM (epcom.net/principal/brands). Cuando existe icono en el conjunto abierto Simple Icons (CC0), se muestra en vector monocromo; el resto va como tipografía en mosaico. Las marcas son propiedad de sus titulares; no sustituye material oficial aprobado. NUO no implica afiliación ni respaldo de cada fabricante.",
     "sourceLabel": "Fuente catálogo EPCOM",
     "pageLink": "Página de marcas NUO",
     "brands": [
       { "id": "epcom-professional", "label": "EPCOM Professional" },
+      { "id": "huawei", "label": "Huawei" },
       { "id": "hikvision", "label": "Hikvision" },
       { "id": "grandstream", "label": "Grandstream" },
       { "id": "zkteco", "label": "ZKTeco" },
@@ -505,6 +547,8 @@
     "brands": [
       { "id": "cisco", "label": "Cisco" },
       { "id": "fortinet", "label": "Fortinet" },
+      { "id": "huawei", "label": "Huawei" },
+      { "id": "grandstream", "label": "Grandstream" },
       { "id": "epcom-professional", "label": "EPCOM" },
       { "id": "hikvision", "label": "Hikvision" }
     ]

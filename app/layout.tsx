@@ -8,6 +8,11 @@ import { defaultOpenGraphImages, defaultRobots, SITE_NAME, SITE_URL } from "@/li
 
 import "./globals.css";
 
+/**
+ * NUO Networks — root shell (Vercel / App Router).
+ * Brand: Premium cyber-industrial — Space Grotesk (headings), Inter (body), JetBrains Mono (data).
+ * Tokens: nuo-base #020617, nuo-cyan #06b6d4, nuo-magenta #d946ef (see tailwind.config + globals.css).
+ */
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -43,7 +48,16 @@ export const metadata: Metadata = {
   },
   applicationName: SITE_NAME,
   description:
-    "NUO Networks: Infraestructura critica, ciberseguridad industrial OT/IT y software a medida. Operación en México y Estados Unidos.",
+    "NUO Networks: Ciberseguridad industrial México, integrador de redes críticas, OT/IT, Zero Trust y desarrollo SaaS. México y Estados Unidos.",
+  keywords: [
+    "NUO Networks",
+    "ciberseguridad industrial México",
+    "integrador de redes",
+    "infraestructura crítica",
+    "SaaS development México",
+    "OT/IT",
+    "Zero Trust"
+  ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -100,7 +114,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="min-h-dvh min-w-0 max-w-full overflow-x-hidden bg-[#020617] font-sans antialiased">
         <HtmlLang />
         <Providers>{children}</Providers>
       </body>
