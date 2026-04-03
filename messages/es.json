@@ -459,50 +459,58 @@
   },
   "sectorCards": [
     { "id": "mfg", "title": "Manufactura", "subtitle": "OT/IT segmentado · continuidad" },
-    { "id": "log", "title": "Logistica", "subtitle": "Enlaces criticos · trazabilidad" },
+    { "id": "log", "title": "Logística", "subtitle": "Enlaces críticos · trazabilidad" },
     { "id": "corp", "title": "Corporativo", "subtitle": "SD-WAN · acceso Zero Trust" },
     { "id": "ret", "title": "Retail", "subtitle": "CCTV IA · pagos seguros" },
     { "id": "fin", "title": "Servicios", "subtitle": "Datos protegidos · compliance" }
   ],
   "ecosystem": {
-    "kicker": "Líneas de práctica",
-    "title": "Cuatro disciplinas de integración bajo un solo modelo de entrega",
-    "subtitle": "Ciber-físico, infraestructura crítica, defensa de red y software propio: cada pilar con responsables técnicos, documentación de diseño y criterios de aceptación medibles.",
+    "kicker": "Verticales de integración",
+    "title": "Cinco pilares de integración bajo un solo modelo de entrega",
+    "subtitle": "Defensa lógica, seguridad patrimonial, networking, infraestructura crítica y NUO Labs: cada pilar con responsables técnicos, documentación de diseño y criterios de aceptación medibles. Términos estándar de la industria (p. ej. DevSecOps, Zero Trust, Cloud-Native) se mantienen en inglés.",
     "aria": "NUO Ecosystem strategic pillars",
     "highlightLabel": "Énfasis:",
     "expertBadge": "Práctica núcleo",
     "pillars": [
       {
-        "id": "cyber-physical",
-        "title": "Cyber-Security OT",
-        "summary": "CCTV y control de acceso segmentados frente a movimiento lateral: VLAN dedicadas, hardening de NVR y políticas que impiden que un vector de video comprometa PLC/SCADA u oficina.",
-        "provider": "Integración sobre fabricantes de videovigilancia y PACS",
-        "keywords": ["Segmentación CCTV", "Anti-lateral OT", "NVR endurecido", "Correlación SOC"],
-        "highlight": "Superficie de video acotada al proceso"
-      },
-      {
-        "id": "critical-infrastructure",
-        "title": "Critical Infrastructure",
-        "summary": "Infraestructura y energia resiliente disenada para operaciones de mision critica.",
-        "provider": "Networking + Energia",
-        "keywords": ["Data Centers", "Fibra", "Networking Industrial", "Energia Solar"],
-        "highlight": "Continuidad operativa 24/7"
-      },
-      {
-        "id": "cyber-defense",
-        "title": "Cyber-Defense",
-        "summary": "Arquitectura de blindaje logico con proteccion de perimetro y datos empresariales.",
+        "id": "logical-defense",
+        "title": "Ciberseguridad & Defensa Lógica",
+        "summary": "|Zero Trust|, monitoreo tipo |SOC| y |pentesting| para reducir la superficie de ataque en IT/OT; políticas L7, correlación de eventos y respuesta coordinada con tu operación.",
         "provider": "Core Strength Unit",
-        "keywords": ["Zero Trust", "SD-WAN", "Pentesting"],
-        "highlight": "Blindaje logico de alta gama",
+        "keywords": ["Zero Trust", "SOC Monitoring", "Pentesting", "DevSecOps"],
+        "highlight": "Superficie de ataque acotada y gobernada",
         "isCore": true
       },
       {
-        "id": "digital-labs",
-        "title": "Custom Software Labs",
-        "summary": "Desarrollo seguro (DevSecOps): Next.js, TypeScript, pipelines y despliegue en AWS con revisiones de dependencias, secretos fuera del repo y entornos aislados.",
+        "id": "patrimonial-security",
+        "title": "Seguridad Patrimonial Inteligente",
+        "summary": "|CCTV| con analítica, control de acceso biométrico y protección perimetral integrada; segmentación frente a movimiento lateral hacia PLC/SCADA. Catálogo y soporte |Powered by EPCOM|.",
+        "provider": "Integración EPCOM / videovigilancia",
+        "keywords": ["CCTV IA", "PACS biométrico", "Perímetro físico", "Anti-lateral OT"],
+        "highlight": "Video y acceso acotados al proceso industrial"
+      },
+      {
+        "id": "networking-servers",
+        "title": "Networking & Servidores",
+        "summary": "|Conectividad industrial|, |fibra óptica| y switching con MTTR acordado; |servidores de alta disponibilidad| y respaldo para cargas de misión sin sacrificar latencia de proceso.",
+        "provider": "Networking + plataformas",
+        "keywords": ["Fibra óptica", "Industrial Ethernet", "Alta disponibilidad", "Data paths"],
+        "highlight": "Transporte y cómputo alineados a continuidad"
+      },
+      {
+        "id": "critical-infrastructure",
+        "title": "Infraestructura Crítica",
+        "summary": "|Energía resiliente| (solar, |UPS|) y operaciones de |misión crítica|; continuidad 24/7 para sedes, planta y edge donde un apagón no es opción.",
+        "provider": "Infra crítica + energía",
+        "keywords": ["Solar / UPS", "Continuidad 24/7", "Edge resiliente", "Misión crítica"],
+        "highlight": "Resiliencia energética y operativa"
+      },
+      {
+        "id": "nuo-labs",
+        "title": "NUO Labs (Innovación Digital)",
+        "summary": "Desarrollo |Cloud-Native| (|Next.js| / |AWS|), |DevSecOps| de extremo a extremo y |tech marketing| para activos digitales con trazabilidad y control de cambios.",
         "provider": "NUO Labs",
-        "keywords": ["DevSecOps", "Next.js / TS", "AWS", "APIs endurecidas"],
+        "keywords": ["Next.js / AWS", "DevSecOps", "APIs endurecidas", "Tech Marketing"],
         "highlight": "Software con trazabilidad y control de cambios"
       }
     ]
@@ -564,7 +572,7 @@
       { "id": "h1", "title": "NGFW y microsegmentación", "detail": "Políticas L7, VPN/IPsec y zonas OT/corporativas con reglas revisables.", "hotLabel": "Perímetro" },
       { "id": "h2", "title": "Backbone fibra / transporte", "detail": "Diseño de anillos y enlaces con MTTR y redundancia acordados con proceso.", "hotLabel": "Transporte" },
       { "id": "h3", "title": "NUO Labs (TypeScript/Next.js)", "detail": "APIs, paneles y automatización conectados a telemetría y flujos B2B.", "hotLabel": "Software" },
-      { "id": "h4", "title": "CCTV y control de acceso", "detail": "Segmentación de video, integración con IAM y correlación en SOC.", "hotLabel": "Cyber-físico" }
+      { "id": "h4", "title": "CCTV y control de acceso", "detail": "Segmentación de video, integración con IAM y correlación en SOC.", "hotLabel": "Ciber-Físico" }
     ]
   },
   "journey": {
@@ -637,18 +645,18 @@
   "softwareHardware": {
     "kicker": "Software frente a hardware",
     "title": "Desarrollamos producto; no solo configuramos cajas",
-    "lead": "El cliente debe ver dos ofertas claras: integracion de equipos de catalogo y capas de software que NUO construye y opera como SaaS o paneles a medida.",
-    "hardwareTitle": "Hardware y fabricantes (integracion)",
+    "lead": "El cliente debe ver dos ofertas claras: integración de equipos de catálogo y capas de software que NUO construye y opera como SaaS o paneles a medida.",
+    "hardwareTitle": "Hardware y fabricantes (integración)",
     "hardwareBullets": [
-      "Seleccion de firewalls, switching, CCTV y enlaces segun tu planta y carrier.",
-      "Puesta en marcha, segmentacion y politicas alineadas a Zero Trust y continuidad.",
-      "Soporte de ingenieria directa sobre lo desplegado, con documentacion viva."
+      "Selección de firewalls, switching, CCTV y enlaces según tu planta y carrier.",
+      "Puesta en marcha, segmentación y políticas alineadas a Zero Trust y continuidad.",
+      "Soporte de ingeniería directa sobre lo desplegado, con documentación viva."
     ],
-    "softwareTitle": "Software, SaaS y automatizacion (NUO Labs)",
+    "softwareTitle": "Software, SaaS y automatización (NUO Labs)",
     "softwareBullets": [
       "Paneles, APIs y microservicios propios: observabilidad, MarTech y flujos B2B.",
-      "Codigo endurecido (TypeScript/Next.js) con despliegue controlado y versionado.",
-      "Integracion a tus datos operativos: de lectura de red a acciones gobernadas."
+      "Código endurecido (TypeScript/Next.js) con despliegue controlado y versionado.",
+      "Integración a tus datos operativos: de lectura de red a acciones gobernadas."
     ]
   },
   "industryUseCases": {
@@ -656,34 +664,34 @@
     "title": "Tres formas de blindar operaciones",
     "cards": [
       {
-        "title": "Logistica segura",
-        "body": "CCTV en muelles y patios, control de acceso, enlaces resilientes y segmentacion para que un incidente en oficina no detenga la cadena de suministro."
+        "title": "Logística segura",
+        "body": "CCTV en muelles y patios, control de acceso, enlaces resilientes y segmentación para que un incidente en oficina no detenga la cadena de suministro."
       },
       {
         "title": "Manufactura 4.0",
-        "body": "PLC, sensores y lineas protegidas con zonas OT, correlacion con IT y monitoreo continuo sin sacrificar latencia de proceso."
+        "body": "PLC, sensores y líneas protegidas con zonas OT, correlación con IT y monitoreo continuo sin sacrificar latencia de proceso."
       },
       {
         "title": "Corporativos blindados",
-        "body": "Sedes y data paths con SD-WAN, Zero Trust y politicas consistentes entre nube, usuarios remotos y visitas a planta."
+        "body": "Sedes y data paths con SD-WAN, Zero Trust y políticas consistentes entre nube, usuarios remotos y visitas a planta."
       }
     ]
   },
   "engineeringPhilosophy": {
-    "kicker": "Ingenieria NUO",
-    "title": "Nuestra filosofia de diseno",
+    "kicker": "Ingeniería NUO",
+    "title": "Nuestra filosofía de diseño",
     "quotes": [
       {
-        "quote": "La resiliencia no es un parche: es la decision de asumir fallos y contenerlos antes de que lleguen a parar la linea.",
+        "quote": "La resiliencia no es un parche: es la decisión de asumir fallos y contenerlos antes de que lleguen a parar la línea.",
         "attribution": "Continuidad operativa"
       },
       {
-        "quote": "Si no puedes observarlo con contexto OT/IT, no puedes defenderlo: telemetria y trazabilidad son parte del diseno, no un extra.",
+        "quote": "Si no puedes observarlo con contexto OT/IT, no puedes defenderlo: telemetría y trazabilidad son parte del diseño, no un extra.",
         "attribution": "Observabilidad unificada"
       },
       {
-        "quote": "Menos superficie, mas claridad: cada puerto y cada flujo debe tener un propietario y un proposito medible.",
-        "attribution": "Endurecimiento sistematico"
+        "quote": "Menos superficie, más claridad: cada puerto y cada flujo debe tener un propietario y un propósito medible.",
+        "attribution": "Endurecimiento sistemático"
       }
     ]
   },
@@ -712,7 +720,7 @@
   },
   "whyNuo": {
     "kicker": "Por que NUO",
-    "title": "No solo integramos hardware: disenamos ecosistemas donde cada capa nace protegida.",
+    "title": "No solo integramos hardware: diseñamos ecosistemas donde cada capa nace protegida.",
     "p1": "Unimos catálogo de clase mundial con fabricantes aliados y arquitectura Zero Trust, redes industriales y laboratorio de software para convertir datos operativos en decisiones.",
     "p2": "Creemos que la eficiencia operativa y la atencion cercana marcan la diferencia cuando el riesgo es real. Por eso trabajamos con ritmo de ingenieria: claro, medible y sin humo.",
     "signoff": "NUO Networks"
@@ -811,12 +819,12 @@
   "cyberAuditFab": {
     "label": "Scorecard CPA-10",
     "aria": "Abrir solicitud de scorecard CPA-10",
-    "whatsappLabel": "Request Services",
+    "whatsappLabel": "Solicitar servicios",
     "whatsappAria": "Abrir WhatsApp USA para solicitar servicios",
     "mailSubject": "Solicitud: Cyber-Audit OT/IT (NUO Networks)"
   },
   "closingCta": {
-    "title": "Deja de improvisar tu perimetro industrial",
+    "title": "Deja de improvisar tu perímetro industrial",
     "subtitle": "Agenda una sesión técnica: revisión de superficie OT/IT, continuidad operativa y marco de cumplimiento aplicable al alcance.",
     "whatsappUs": "🇺🇸 Whatsapp USA",
     "whatsappUsAria": "Abrir WhatsApp USA +1 (424) 355-3283 (NUO Networks)",
@@ -825,15 +833,16 @@
     "ctaVuln": "Agenda tu auditoría CPA-10",
     "ctaVulnAria": "Enviar correo para agendar auditoría CPA-10",
     "mailSubjectVuln": "Solicitud: auditoría CPA-10 (NUO)",
-    "ctaZeroTrust": "Disenar mi arquitectura Zero Trust",
-    "ctaZeroTrustAria": "Enviar correo para disenar arquitectura Zero Trust",
+    "ctaZeroTrust": "Diseñar mi arquitectura Zero Trust",
+    "ctaZeroTrustAria": "Enviar correo para diseñar arquitectura Zero Trust",
     "mailSubjectZeroTrust": "Solicitud: arquitectura Zero Trust (NUO)",
     "email": "Correo general",
     "emailAria": "Enviar correo a contact@nuo-networks.com"
   },
   "footer": {
-    "blurb": "Infraestructura critica y ciberseguridad industrial para organizaciones que requieren continuidad operativa, resiliencia y crecimiento digital.",
-    "linesTitle": "Lineas de negocio",
+    "blurb": "Infraestructura crítica y ciberseguridad industrial para organizaciones que requieren continuidad operativa, resiliencia y crecimiento digital.",
+    "linesTitle": "Líneas de negocio",
+    "sectorNichesTitle": "Contextos de despliegue",
     "line1": "Cyber-Physical Security",
     "line2": "Critical Infrastructure",
     "line3": "Cyber-Defense",
@@ -854,9 +863,14 @@
     "whatsappMxDisplay": "+52 56 3674 1156",
     "rights": "Todos los derechos reservados.",
     "privacy": "Privacidad",
-    "terms": "Terminos",
-    "certsTitle": "Marco de cumplimiento (ingenieria)",
-    "certsNote": "Alineacion a buenas practicas; alcance formal y evidencias se definen por contrato y jurisdiccion.",
+    "terms": "Términos",
+    "sectorNiches": [
+      "Nearshoring & Industria 4.0",
+      "AgroTech Resiliente",
+      "Fintech & PropTech"
+    ],
+    "certsTitle": "Marco de cumplimiento (ingeniería)",
+    "certsNote": "Alineación a buenas prácticas; alcance formal y evidencias se definen por contrato y jurisdicción.",
     "certs": [
       { "id": "nist", "label": "NIST CSF / 800-53" },
       { "id": "gdpr", "label": "GDPR / privacidad UE" },

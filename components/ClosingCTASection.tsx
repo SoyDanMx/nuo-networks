@@ -22,7 +22,7 @@ const ClosingCTASection = (): JSX.Element => {
       <div className="container mx-auto max-w-4xl text-center">
         <h2
           id="closing-cta-heading"
-          className="font-heading text-2xl font-bold leading-tight text-foreground md:text-5xl"
+          className="text-balance font-heading text-2xl font-bold leading-tight text-foreground md:text-5xl"
         >
           {c.title}
         </h2>
@@ -51,20 +51,20 @@ const ClosingCTASection = (): JSX.Element => {
             href={NUO_WHATSAPP_US_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(37,211,102,0.35)] transition-all hover:bg-[#20BD5A] sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/45 bg-gradient-to-b from-cyan-500/20 to-cyan-950/30 px-8 py-4 text-base font-semibold text-cyan-50 shadow-[0_0_28px_rgba(6,182,212,0.38)] transition-all hover:border-fuchsia-400/45 hover:from-fuchsia-500/20 hover:to-fuchsia-950/25 hover:text-fuchsia-50 hover:shadow-[0_0_32px_rgba(217,70,239,0.35)] sm:w-auto"
             aria-label={c.whatsappUsAria}
           >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden="true" />
             {c.whatsappUs}
           </a>
           <a
             href={NUO_WHATSAPP_MX_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(37,211,102,0.35)] transition-all hover:bg-[#20BD5A] sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/45 bg-gradient-to-b from-cyan-500/20 to-cyan-950/30 px-8 py-4 text-base font-semibold text-cyan-50 shadow-[0_0_28px_rgba(6,182,212,0.38)] transition-all hover:border-fuchsia-400/45 hover:from-fuchsia-500/20 hover:to-fuchsia-950/25 hover:text-fuchsia-50 hover:shadow-[0_0_32px_rgba(217,70,239,0.35)] sm:w-auto"
             aria-label={c.whatsappMxAria}
           >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden="true" />
             {c.whatsappMx}
           </a>
           <a

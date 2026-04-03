@@ -465,44 +465,52 @@
     { "id": "fin", "title": "Services", "subtitle": "Protected data · compliance" }
   ],
   "ecosystem": {
-    "kicker": "Practice lines",
-    "title": "Four integration disciplines under one delivery model",
-    "subtitle": "Cyber-physical, critical infrastructure, network defense, and first-party software—each with named engineering owners, design documentation, and measurable acceptance criteria.",
+    "kicker": "Integration verticals",
+    "title": "Five integration pillars under one delivery model",
+    "subtitle": "Logical security, patrimonial security, networking, critical infrastructure, and NUO Labs—each with named engineering owners, design documentation, and measurable acceptance criteria. Industry-standard terms (e.g. DevSecOps, Zero Trust, Cloud-Native) stay in English.",
     "aria": "NUO Ecosystem strategic pillars",
     "highlightLabel": "Focus:",
     "expertBadge": "Core practice",
     "pillars": [
       {
-        "id": "cyber-physical",
-        "title": "Cyber-Security OT",
-        "summary": "CCTV and access control segmented against lateral movement: dedicated VLANs, hardened NVRs, and policies that block a video vector from reaching PLCs/SCADA or the office LAN.",
-        "provider": "Integration on leading video and PACS vendors",
-        "keywords": ["CCTV segmentation", "Anti-lateral OT", "Hardened NVR", "SOC correlation"],
-        "highlight": "Video surface bounded to operations"
+        "id": "logical-defense",
+        "title": "Cybersecurity & Logical Defense",
+        "summary": "|Zero Trust|, |SOC|-style monitoring, and |pentesting| to shrink the IT/OT attack surface; L7 policies, event correlation, and response aligned with operations.",
+        "provider": "Core Strength Unit",
+        "keywords": ["Zero Trust", "SOC Monitoring", "Pentesting", "DevSecOps"],
+        "highlight": "Attack surface bounded and governed",
+        "isCore": true
+      },
+      {
+        "id": "patrimonial-security",
+        "title": "Intelligent Patrimonial Security",
+        "summary": "|AI CCTV|, biometric access control, and integrated perimeter protection; segmentation against lateral movement toward PLC/SCADA. Catalog and support |Powered by EPCOM|.",
+        "provider": "EPCOM / video integration",
+        "keywords": ["AI CCTV", "Biometric PACS", "Physical perimeter", "Anti-lateral OT"],
+        "highlight": "Video and access bounded to industrial process"
+      },
+      {
+        "id": "networking-servers",
+        "title": "Networking & Servers",
+        "summary": "|Industrial connectivity|, |fiber optics|, and switching with agreed MTTR; |high-availability servers| and resilience for mission loads without sacrificing process latency.",
+        "provider": "Networking + platforms",
+        "keywords": ["Fiber optics", "Industrial Ethernet", "High availability", "Data paths"],
+        "highlight": "Transport and compute aligned to continuity"
       },
       {
         "id": "critical-infrastructure",
         "title": "Critical Infrastructure",
-        "summary": "Resilient infrastructure and energy for mission-critical operations.",
-        "provider": "Networking + Energy",
-        "keywords": ["Data Centers", "Fiber", "Industrial networking", "Solar power"],
-        "highlight": "24/7 operational continuity"
+        "summary": "|Resilient energy| (solar, |UPS|) and |mission-critical| operations; 24/7 continuity for sites, plant, and edge—where power loss is not an option.",
+        "provider": "Critical infra + energy",
+        "keywords": ["Solar / UPS", "24/7 continuity", "Resilient edge", "Mission-critical"],
+        "highlight": "Energy and operational resilience"
       },
       {
-        "id": "cyber-defense",
-        "title": "Cyber-Defense",
-        "summary": "Logical hardening architecture for perimeter and enterprise data protection.",
-        "provider": "Core Strength Unit",
-        "keywords": ["Zero Trust", "SD-WAN", "Pentesting"],
-        "highlight": "High-grade logical hardening",
-        "isCore": true
-      },
-      {
-        "id": "digital-labs",
-        "title": "Custom Software Labs",
-        "summary": "Secure development (DevSecOps): Next.js, TypeScript, pipelines, and AWS deployment with dependency review, secrets out of repo, and isolated environments.",
+        "id": "nuo-labs",
+        "title": "NUO Labs (Digital Innovation)",
+        "summary": "|Cloud-Native| delivery (|Next.js| / |AWS|), end-to-end |DevSecOps|, and |tech marketing| for digital assets—with traceability and change control.",
         "provider": "NUO Labs",
-        "keywords": ["DevSecOps", "Next.js / TS", "AWS", "Hardened APIs"],
+        "keywords": ["Next.js / AWS", "DevSecOps", "Hardened APIs", "Tech Marketing"],
         "highlight": "Software with traceability and change control"
       }
     ]
@@ -834,6 +842,7 @@
   "footer": {
     "blurb": "Critical infrastructure and industrial cybersecurity for organizations that need operational continuity, resilience, and digital growth.",
     "linesTitle": "Business lines",
+    "sectorNichesTitle": "Deployment contexts",
     "line1": "Cyber-Physical Security",
     "line2": "Critical Infrastructure",
     "line3": "Cyber-Defense",
@@ -855,6 +864,11 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms",
+    "sectorNiches": [
+      "Nearshoring & Industry 4.0",
+      "Resilient AgroTech",
+      "Fintech & PropTech"
+    ],
     "certsTitle": "Compliance framework (engineering)",
     "certsNote": "Alignment to good practice; formal scope and evidence are defined per contract and jurisdiction.",
     "certs": [

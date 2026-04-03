@@ -26,14 +26,14 @@ const CapabilityHighlights = (): JSX.Element => {
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">{h.kicker}</p>
           <h2
             id="highlights-heading"
-            className="font-heading text-2xl font-bold text-foreground md:text-4xl"
+            className="text-balance font-heading text-2xl font-bold text-foreground md:text-4xl"
           >
             {h.title}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground md:mx-0">{h.subtitle}</p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid gap-4 sm:grid-cols-2 sm:gap-5">
           {h.items.map((item, index) => (
             <motion.li
               key={item.id}
@@ -41,8 +41,9 @@ const CapabilityHighlights = (): JSX.Element => {
               whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.35 }}
-              className="card-glass-neon-cyan flex gap-4 rounded-2xl p-5"
+              className="ecosystem-bento-card"
             >
+              <div className="ecosystem-bento-card__inner flex gap-4 p-5 sm:p-6">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-secondary/40 bg-secondary/10 text-secondary">
                 <Flame className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -52,8 +53,9 @@ const CapabilityHighlights = (): JSX.Element => {
                     {item.hotLabel}
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-balance font-heading text-lg font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
+              </div>
               </div>
             </motion.li>
           ))}

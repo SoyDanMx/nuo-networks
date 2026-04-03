@@ -3,7 +3,7 @@
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BadgeCheck, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { BadgeCheck, Globe2, Landmark, Mail, MapPin, MessageCircle, Phone, Sprout } from "lucide-react";
 
 import {
   NUO_CONTACT_EMAIL,
@@ -15,11 +15,14 @@ import {
 import { useI18n } from "@/lib/i18n/provider";
 import { localizedHome } from "@/lib/i18n/paths";
 
+const SECTOR_NICHE_ICONS = [Globe2, Sprout, Landmark] as const;
+
 const Footer = (): JSX.Element => {
   const { locale, messages } = useI18n();
   const f = messages.footer;
   const c = messages.closingCta;
   const base = localizedHome(locale);
+  const niches = f.sectorNiches ?? [];
 
   return (
     <footer id="contact" className="scroll-mt-24 border-t border-border/70 bg-card/40">
@@ -94,10 +97,10 @@ const Footer = (): JSX.Element => {
                 href={NUO_WHATSAPP_US_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_rgba(37,211,102,0.35)] transition-all hover:bg-[#20BD5A] hover:shadow-[0_0_28px_rgba(37,211,102,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex sm:w-auto"
+                className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-xl border border-cyan-400/45 bg-gradient-to-b from-cyan-500/20 to-cyan-950/30 px-4 py-2.5 text-sm font-semibold text-cyan-50 shadow-[0_0_24px_rgba(6,182,212,0.35)] transition-all hover:border-fuchsia-400/45 hover:from-fuchsia-500/20 hover:to-fuchsia-950/25 hover:text-fuchsia-50 hover:shadow-[0_0_28px_rgba(217,70,239,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex sm:w-auto"
                 aria-label={c.whatsappUsAria}
               >
-                <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                <MessageCircle className="h-5 w-5 shrink-0 text-[#25D366]" aria-hidden="true" />
                 {c.whatsappUs} · <span className="tabular-nums">{f.whatsappUsDisplay}</span>
               </a>
             </li>
@@ -107,15 +110,35 @@ const Footer = (): JSX.Element => {
                 href={NUO_WHATSAPP_MX_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_rgba(37,211,102,0.35)] transition-all hover:bg-[#20BD5A] hover:shadow-[0_0_28px_rgba(37,211,102,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex sm:w-auto"
+                className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-xl border border-cyan-400/45 bg-gradient-to-b from-cyan-500/20 to-cyan-950/30 px-4 py-2.5 text-sm font-semibold text-cyan-50 shadow-[0_0_24px_rgba(6,182,212,0.35)] transition-all hover:border-fuchsia-400/45 hover:from-fuchsia-500/20 hover:to-fuchsia-950/25 hover:text-fuchsia-50 hover:shadow-[0_0_28px_rgba(217,70,239,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex sm:w-auto"
                 aria-label={c.whatsappMxAria}
               >
-                <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                <MessageCircle className="h-5 w-5 shrink-0 text-[#25D366]" aria-hidden="true" />
                 {c.whatsappMx} · <span className="tabular-nums">{f.whatsappMxDisplay}</span>
               </a>
             </li>
           </ul>
         </section>
+
+        {niches.length > 0 && f.sectorNichesTitle ? (
+          <section className="border-t border-border/50 pt-8 lg:col-span-12">
+            <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{f.sectorNichesTitle}</h4>
+            <ul className="flex flex-wrap gap-2">
+              {niches.map((label, i) => {
+                const Ico = SECTOR_NICHE_ICONS[i] ?? Globe2;
+                return (
+                  <li
+                    key={label}
+                    className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/[0.04] px-3 py-1.5 text-xs text-muted-foreground"
+                  >
+                    <Ico className="h-3.5 w-3.5 shrink-0 text-cyan-500/75" aria-hidden />
+                    {label}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ) : null}
       </div>
 
       <div className="border-t border-border/60 bg-black/20">
